@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
-	has_many :comments
-	belongs_to :user
+	belongs_to :user 
+	has_many :comments, dependent: :destroy #when a post is destroy all the comments are destroyed
 end
