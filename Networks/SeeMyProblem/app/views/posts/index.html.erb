@@ -34,5 +34,42 @@
 </table>
 
 <br>
+<h1>New post form with Ajax</h1>
+<%= form_for(@post, remote: true) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title, id: :post_title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :content %>
+      <%= f.text_area :content, id: :post_content %>
+    </div>
+
+    <div class="field">
+      <%= f.label :post_type %>
+      <%= f.select :post_type, options_for_select([["Select One", ""], "1st", "2nd", "3rd", "Personal", "Other"]) %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+
+<h1>New post form without ajax</h1>
 <%= link_to 'New Post', new_post_path %>
