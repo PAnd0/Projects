@@ -1,8 +1,11 @@
 <tr>
+        <td id="<%= post.id %>"><%= post.id %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= post.post_type %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
 </tr>
+
+

@@ -51,5 +51,32 @@
 
 
 
-<p class="turtle">New post form without ajax</p>
+<p>New post form without ajax</p>
 <%= link_to 'New Post', new_post_path %>
+
+<div id="EP">
+<%= form_for(@post, :method => :put, remote: true) do |form| %>
+  
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :post_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :post_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_type %>
+    <%= form.select :post_type, options_for_select([["Select One", ""], "1st", "2nd", "3rd", "Personal", "Other"]) %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+

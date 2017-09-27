@@ -14,7 +14,8 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(e) {   
+$(document).ready(function(e) { 
+	$("#EP").hide();  
 	$("select.main_filter").change(function(e){
 		
 		if($("select").val() == "1st"){
