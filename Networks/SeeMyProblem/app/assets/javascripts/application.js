@@ -15,8 +15,13 @@
 //= require_tree .
 
 $(document).ready(function(e) { 
-	$("#EP").hide();  
-	$("select.main_filter").change(function(e){
+	$(".EP").hide();
+	// $('a:contains("Edit")').on("click",function(e){
+	// 	console.log("Edit clicked");
+	// 	$("#EP").appendTo($(this).parent().parent())
+		
+	// });
+	$("select.main_filter").change(function(){
 		
 		if($("select").val() == "1st"){
 			
