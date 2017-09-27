@@ -1,38 +1,40 @@
-<tr>
-        <td id="<%= post.id %>"><%= post.id %></td>
+<tr id="<%= post.id %>">
+        <td><%= post.id %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= post.post_type %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><button type="button" data-target="#myupdatepost_<%= post.id %>">Edit</button></td>
+        <td><button type="button" class="edit_button" data-target="#myupdatepost_<%= post.id %>">Edit</button></td>
         <td><%= link_to 'Edit', edit_post_path(post), remote: true %></td>
         <td><%= link_to 'Destroy', post, method: :delete, remote: true %></td>
         
 </tr>
 
 
-<div class="EP">
+<tr class="EP <%= post.id %>">
 <%= form_for(post, :method => :put, remote: true) do |form| %>
 
-	<div class="field">
+	<td class="field">
 		<%= form.label :title %>
 		<%= form.text_field :title, id: :post_title %>
-	</div>
+	</td>
 
-	<div class="field">
+	<td class="field">
 		<%= form.label :content %>
 		<%= form.text_area :content, id: :post_content %>
-	</div>
+	</td>
 
-	<div class="field">
+	<td class="field">
 		<%= form.label :post_type %>
 		<%= form.select :post_type, options_for_select([["Select One", ""], "1st", "2nd", "3rd", "Personal", "Other"]) %>
 
-	</div>
+	</td>
 
-	<div class="actions">
+	<td class="actions">
 		<%= form.submit %>
-	</div>
+	</td>
 
 <% end %>
-</div>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>

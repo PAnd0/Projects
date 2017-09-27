@@ -16,6 +16,11 @@
 
 $(document).ready(function(e) { 
 	$(".EP").hide();
+	$("button.edit_button").on("click",function(){
+		console.log("Edit Button clicked");
+		$(this).parent().parent().next().toggle();
+	})
+
 	// $('a:contains("Edit")').on("click",function(e){
 	// 	console.log("Edit clicked");
 	// 	$("#EP").appendTo($(this).parent().parent())
