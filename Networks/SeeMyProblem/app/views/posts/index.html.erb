@@ -20,34 +20,14 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.post_type %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @posts %>
   </tbody>
 </table>
 
 <br>
-<h1>New post form with Ajax</h1>
+<p>New post form with Ajax</p> 
+
 <%= form_for(@post, remote: true) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
     <div class="field">
       <%= f.label :title %>
       <%= f.text_field :title, id: :post_title %>
@@ -71,5 +51,5 @@
 
 
 
-<h1>New post form without ajax</h1>
+<p class="turtle">New post form without ajax</p>
 <%= link_to 'New Post', new_post_path %>

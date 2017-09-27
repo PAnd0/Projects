@@ -3175,3 +3175,356 @@ ActionView::Template::Error (Missing partial posts/_post with {:locale=>[:en], :
     5: $("select").val("Select One")
   
 app/views/posts/create.js.erb:2:in `_app_views_posts_create_js_erb__3966267083938050421_70324915932620'
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 09:57:37 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (142.2ms)
+Completed 200 OK in 570ms (Views: 483.0ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:09:57 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 69ms (Views: 36.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:10:10 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"New post", "content"=>"content f post", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (27.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New post"], ["content", "content f post"], ["created_at", "2017-09-27 15:10:10.704392"], ["updated_at", "2017-09-27 15:10:10.704392"], ["post_type", "2nd"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 13.1ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:12:30 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 43ms (Views: 37.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:12:40 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Turtle", "content"=>"Turtle", "post_type"=>"1st"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Turtle"], ["content", "Turtle"], ["created_at", "2017-09-27 15:12:40.385620"], ["updated_at", "2017-09-27 15:12:40.385620"], ["post_type", "1st"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 12.7ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:12:59 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 79ms (Views: 72.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:13:08 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Dog", "content"=>"Dog", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Dog"], ["content", "Dog"], ["created_at", "2017-09-27 15:13:08.333812"], ["updated_at", "2017-09-27 15:13:08.333812"], ["post_type", "2nd"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 12.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:13:39 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Dog", "content"=>"ggg", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Dog"], ["content", "ggg"], ["created_at", "2017-09-27 15:13:39.749804"], ["updated_at", "2017-09-27 15:13:39.749804"], ["post_type", "2nd"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (0.3ms)
+Completed 200 OK in 20ms (Views: 11.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:17:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:17:24 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Ajax", "content"=>"Ajax", "post_type"=>"1st"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ajax"], ["content", "Ajax"], ["created_at", "2017-09-27 15:17:24.098612"], ["updated_at", "2017-09-27 15:17:24.098612"], ["post_type", "1st"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (25.4ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_post with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Networks/SeeMyProblem/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    2: $("textarea#post_content").val("");
+    3: $("select").val("Select One");
+    4: 
+    5: $("p.turtle").append('<%= j render @post %>');
+  
+app/views/posts/create.js.erb:5:in `_app_views_posts_create_js_erb__3785829475589015725_70202204198980'
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:18:12 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Ajax", "content"=>"Ajax", "post_type"=>"1st"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Ajax"], ["content", "Ajax"], ["created_at", "2017-09-27 15:18:12.603618"], ["updated_at", "2017-09-27 15:18:12.603618"], ["post_type", "1st"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (8.3ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_post with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Networks/SeeMyProblem/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    2: $("textarea#post_content").val("");
+    3: $("select").val("Select One");
+    4: 
+    5: $("p.turtle").append('<%= j(render @post) %>');
+  
+app/views/posts/create.js.erb:5:in `_app_views_posts_create_js_erb__3785829475589015725_70202222399860'
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:18:13 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:18:19 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"jj", "content"=>"jjj", "post_type"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jj"], ["content", "jjj"], ["created_at", "2017-09-27 15:18:19.010608"], ["updated_at", "2017-09-27 15:18:19.010608"], ["post_type", ""]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (7.8ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_post with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Networks/SeeMyProblem/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    2: $("textarea#post_content").val("");
+    3: $("select").val("Select One");
+    4: 
+    5: $("p.turtle").append('<%= j(render @post) %>');
+  
+app/views/posts/create.js.erb:5:in `_app_views_posts_create_js_erb__3785829475589015725_70202203426900'
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:18:21 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"jj", "content"=>"jjj", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jj"], ["content", "jjj"], ["created_at", "2017-09-27 15:18:21.787676"], ["updated_at", "2017-09-27 15:18:21.787676"], ["post_type", "2nd"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (6.9ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_post with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Networks/SeeMyProblem/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    2: $("textarea#post_content").val("");
+    3: $("select").val("Select One");
+    4: 
+    5: $("p.turtle").append('<%= j(render @post) %>');
+  
+app/views/posts/create.js.erb:5:in `_app_views_posts_create_js_erb__3785829475589015725_70202219181880'
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:18:23 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:18:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 53ms (Views: 47.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:18:39 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"K", "content"=>"K", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "K"], ["content", "K"], ["created_at", "2017-09-27 15:18:39.961696"], ["updated_at", "2017-09-27 15:18:39.961696"], ["post_type", "2nd"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (240.9ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007fb275068e28>:0x007fb274b930b0>
+Did you mean?  @post):
+    2: $("textarea#post_content").val("");
+    3: $("select").val("Select One");
+    4: 
+    5: $("p.turtle").append('<%= j render post %>');
+  
+app/views/posts/create.js.erb:5:in `_app_views_posts_create_js_erb__3785829475589015725_70202219601580'
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:21:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:21:14 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"L", "content"=>"L", "post_type"=>"1st"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "L"], ["content", "L"], ["created_at", "2017-09-27 15:21:14.442354"], ["updated_at", "2017-09-27 15:21:14.442354"], ["post_type", "1st"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/create.js.erb (12.1ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_L, application/_L with {:locale=>[:en], :formats=>[:js, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Networks/SeeMyProblem/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    2: $("textarea#post_content").val("");
+    3: $("select").val("Select One");
+    4: 
+    5: $("p.turtle").append('<%= j render @post.title %>');
+  
+app/views/posts/create.js.erb:5:in `_app_views_posts_create_js_erb__3785829475589015725_70202166770900'
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:26:35 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 93ms (Views: 51.5ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:26:43 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"J", "content"=>"hello moto", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10490ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:32:in `block in create'
+app/controllers/posts_controller.rb:31:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:32:48 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [56 times] (13.8ms)
+  Rendered posts/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 83ms (Views: 44.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:32:51 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [56 times] (17.4ms)
+  Rendered posts/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 66ms (Views: 60.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:32:56 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [56 times] (12.9ms)
+  Rendered posts/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:33:06 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Got", "content"=>"Milk", "post_type"=>"2nd"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Got"], ["content", "Milk"], ["created_at", "2017-09-27 15:33:06.341620"], ["updated_at", "2017-09-27 15:33:06.341620"], ["post_type", "2nd"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (1.0ms)
+  Rendered posts/create.js.erb (4.3ms)
+Completed 200 OK in 27ms (Views: 16.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 10:33:39 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [57 times] (13.3ms)
+  Rendered posts/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 10:33:50 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"This", "content"=>"Works Now!!!", "post_type"=>"Other"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "This"], ["content", "Works Now!!!"], ["created_at", "2017-09-27 15:33:50.884886"], ["updated_at", "2017-09-27 15:33:50.884886"], ["post_type", "Other"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (1.0ms)
+  Rendered posts/create.js.erb (4.8ms)
+Completed 200 OK in 32ms (Views: 16.6ms | ActiveRecord: 8.1ms)
+
+
