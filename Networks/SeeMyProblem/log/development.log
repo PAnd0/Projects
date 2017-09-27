@@ -5706,3 +5706,339 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 82ms (Views: 76.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:27:34 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (6.7ms)
+  Rendered posts/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:27:37 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"JIJIJIJ", "content"=>"KKKKK", "post_type"=>""}, "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["post_type", ""], ["updated_at", "2017-09-27 18:27:37.440171"], ["id", 16]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/update.js.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 12.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:27:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.3ms)
+  Rendered posts/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:27:57 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"JIJIJIJ", "content"=>"KKKKK", "post_type"=>""}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/update.js.erb (0.7ms)
+Completed 200 OK in 27ms (Views: 16.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:29:02 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.9ms)
+  Rendered posts/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:29:04 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"JIJIJIJ", "content"=>"KKKKK", "post_type"=>""}, "id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/update.js.erb (0.5ms)
+Completed 200 OK in 26ms (Views: 16.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:29:14 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (7.0ms)
+  Rendered posts/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 43ms (Views: 39.4ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:29:16 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"JIJIJIJ", "content"=>"KKKKK", "post_type"=>""}, "id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/update.js.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 18.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:30:37 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (6.0ms)
+  Rendered posts/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:30:40 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"JIJIJIJ", "content"=>"KKKKK", "post_type"=>""}, "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/update.js.erb (0.5ms)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:30:46 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.8ms)
+  Rendered posts/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:31:07 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Stack sause", "content"=>"Nugger", "post_type"=>"2nd"}, "id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "content" = ?, "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Stack sause"], ["content", "Nugger"], ["post_type", "2nd"], ["updated_at", "2017-09-27 18:31:07.739866"], ["id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/update.js.erb (0.5ms)
+Completed 200 OK in 23ms (Views: 12.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:31:35 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (7.1ms)
+  Rendered posts/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:32:23 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (7.7ms)
+  Rendered posts/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:32:33 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Stack sause", "content"=>"Nugger@@@@", "post_type"=>"1st"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Nugger@@@@"], ["post_type", "1st"], ["updated_at", "2017-09-27 18:32:33.656535"], ["id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.6ms)
+  Rendered posts/update.js.erb (5.8ms)
+Completed 200 OK in 28ms (Views: 17.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:32:49 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.2ms)
+  Rendered posts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:33:15 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.9ms)
+  Rendered posts/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.6ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:33:21 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Stack sause", "content"=>"Nugger", "post_type"=>"1st"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Nugger"], ["updated_at", "2017-09-27 18:33:21.846853"], ["id", 16]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.8ms)
+  Rendered posts/update.js.erb (6.1ms)
+Completed 200 OK in 28ms (Views: 18.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:34:26 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (6.6ms)
+  Rendered posts/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:34:40 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Stack sause", "content"=>"Nuggettyassss", "post_type"=>"Personal"}, "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Nuggettyassss"], ["post_type", "Personal"], ["updated_at", "2017-09-27 18:34:40.321729"], ["id", 16]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (3.8ms)
+  Rendered posts/update.js.erb (7.0ms)
+Completed 200 OK in 30ms (Views: 19.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:35:21 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.9ms)
+  Rendered posts/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:35:29 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Saucy", "content"=>"Nuggettyassss", "post_type"=>"Personal"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Saucy"], ["updated_at", "2017-09-27 18:35:29.699023"], ["id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (3.0ms)
+  Rendered posts/update.js.erb (6.4ms)
+Completed 200 OK in 27ms (Views: 18.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:35:46 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (7.2ms)
+  Rendered posts/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:36:00 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Beeef", "content"=>"Stuggle", "post_type"=>"2nd"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "content" = ?, "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Beeef"], ["content", "Stuggle"], ["post_type", "2nd"], ["updated_at", "2017-09-27 18:36:00.370732"], ["id", 16]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.6ms)
+  Rendered posts/update.js.erb (5.6ms)
+Completed 200 OK in 27ms (Views: 17.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:36:53 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (6.0ms)
+  Rendered posts/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 38ms (Views: 32.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:37:01 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Beeef", "content"=>"NoStruggles", "post_type"=>"Personal"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "NoStruggles"], ["post_type", "Personal"], ["updated_at", "2017-09-27 18:37:01.107714"], ["id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.6ms)
+  Rendered posts/update.js.erb (5.7ms)
+Completed 200 OK in 28ms (Views: 18.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:37:51 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (6.9ms)
+  Rendered posts/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:37:59 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Beeef", "content"=>"NoS", "post_type"=>"Personal"}, "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "NoS"], ["updated_at", "2017-09-27 18:37:59.722861"], ["id", 16]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (3.6ms)
+  Rendered posts/update.js.erb (7.6ms)
+Completed 200 OK in 29ms (Views: 19.8ms | ActiveRecord: 2.0ms)
+
+
+Started PUT "/posts/17" for 127.0.0.1 at 2017-09-27 13:38:12 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"FGFGFGFG", "content"=>"HAHAHAHAHHHAA", "post_type"=>"Personal"}, "id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "post_type" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "HAHAHAHAHHHAA"], ["post_type", "Personal"], ["updated_at", "2017-09-27 18:38:12.111481"], ["id", 17]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (3.3ms)
+  Rendered posts/update.js.erb (6.8ms)
+Completed 200 OK in 27ms (Views: 18.0ms | ActiveRecord: 1.9ms)
+
+
