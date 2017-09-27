@@ -6042,3 +6042,119 @@ Processing by PostsController#update as JS
 Completed 200 OK in 27ms (Views: 18.0ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:40:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (5.5ms)
+  Rendered posts/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/16" for 127.0.0.1 at 2017-09-27 13:40:51 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Sneet", "content"=>"NoS", "post_type"=>"Personal"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Sneet"], ["updated_at", "2017-09-27 18:40:51.776290"], ["id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.8ms)
+  Rendered posts/update.js.erb (5.9ms)
+Completed 200 OK in 27ms (Views: 18.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:40:53 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [3 times] (9.0ms)
+  Rendered posts/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 13:42:01 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"SOmething fun", "content"=>"The contents are hidden", "post_type"=>"Other"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "SOmething fun"], ["content", "The contents are hidden"], ["created_at", "2017-09-27 18:42:01.646879"], ["updated_at", "2017-09-27 18:42:01.646879"], ["post_type", "Other"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (2.6ms)
+  Rendered posts/create.js.erb (5.7ms)
+Completed 200 OK in 62ms (Views: 18.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:43:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [4 times] (2.1ms)
+  Rendered posts/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 44ms (Views: 38.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 13:43:40 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Hi", "content"=>"Me", "post_type"=>"Other"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hi"], ["content", "Me"], ["created_at", "2017-09-27 18:43:40.396051"], ["updated_at", "2017-09-27 18:43:40.396051"], ["post_type", "Other"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/create.js.erb (4.5ms)
+Completed 200 OK in 25ms (Views: 16.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:44:10 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [5 times] (9.1ms)
+  Rendered posts/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 13:44:19 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Y", "content"=>"You seee", "post_type"=>"Other"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Y"], ["content", "You seee"], ["created_at", "2017-09-27 18:44:19.127280"], ["updated_at", "2017-09-27 18:44:19.127280"], ["post_type", "Other"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (2.6ms)
+  Rendered posts/create.js.erb (5.8ms)
+Completed 200 OK in 30ms (Views: 20.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 13:45:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [6 times] (12.9ms)
+  Rendered posts/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 13:45:44 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Now you dont", "content"=>"You cant see me", "post_type"=>"Personal"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Now you dont"], ["content", "You cant see me"], ["created_at", "2017-09-27 18:45:44.785440"], ["updated_at", "2017-09-27 18:45:44.785440"], ["post_type", "Personal"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (3.1ms)
+  Rendered posts/create.js.erb (6.8ms)
+Completed 200 OK in 29ms (Views: 19.8ms | ActiveRecord: 1.9ms)
+
+

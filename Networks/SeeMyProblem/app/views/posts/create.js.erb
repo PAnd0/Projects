@@ -3,3 +3,4 @@ $("textarea#post_content").val("");
 $("select").val("Select One");
 
 $("tbody").append('<%= j render @post %>');
+$("tr.<%= @post.id %>").toggle();
