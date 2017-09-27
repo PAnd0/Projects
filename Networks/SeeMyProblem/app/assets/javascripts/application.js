@@ -14,8 +14,19 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(e) {   
-	$("select.main_filter").change(function(e){
+$(document).ready(function(e) { 
+	$(".EP").hide();
+	$("button.edit_button").on("click",function(){
+		console.log("Edit Button clicked");
+		$(this).parent().parent().next().toggle();
+	})
+
+	// $('a:contains("Edit")').on("click",function(e){
+	// 	console.log("Edit clicked");
+	// 	$("#EP").appendTo($(this).parent().parent())
+		
+	// });
+	$("select.main_filter").change(function(){
 		
 		if($("select").val() == "1st"){
 			
