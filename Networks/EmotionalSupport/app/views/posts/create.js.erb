@@ -1,3 +1,4 @@
 $("input#post_title").val("");
 $("textarea#post_content").val("");
 $("tbody").append('<%= j render @post %>');
+$("tr.<%= @post.id %>").hide();

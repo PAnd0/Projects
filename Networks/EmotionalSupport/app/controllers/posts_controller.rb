@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
    # @post.id = Post.all.count + 1
-   binding.pry
+   
     respond_to do |format|
       if @post.save
         
