@@ -6158,3 +6158,60 @@ Processing by PostsController#create as JS
 Completed 200 OK in 29ms (Views: 19.8ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-09-27 16:35:53 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 27ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-09-27 16:35:54 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (151.0ms)
+Completed 200 OK in 636ms (Views: 605.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-27 16:36:06 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kDG3QGgNr4IhgnYw/tUqng8EjKrHE9cWwDNsRUSRbvQjBHXrJHibmd9z8GjoJiIcLk4r9kurDhkWIvK9xEdnZg==", "user"=>{"email"=>"email@email.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "email@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-09-27 21:36:06.749032"], ["last_sign_in_at", "2017-09-26 16:21:47.521103"], ["sign_in_count", 5], ["updated_at", "2017-09-27 21:36:06.750258"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 282ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 16:36:06 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-27 16:36:06 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [7 times] (24.9ms)
+  Rendered posts/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 89ms (Views: 55.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-09-27 16:36:16 -0500
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Sup", "content"=>"Dog", "post_type"=>"1st"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "post_type") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Sup"], ["content", "Dog"], ["created_at", "2017-09-27 21:36:25.300874"], ["updated_at", "2017-09-27 21:36:25.300874"], ["post_type", "1st"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/create.js.erb
+  Rendered posts/_post.html.erb (4.3ms)
+  Rendered posts/create.js.erb (9.1ms)
+Completed 200 OK in 8428ms (Views: 22.2ms | ActiveRecord: 2.5ms)
+
+
