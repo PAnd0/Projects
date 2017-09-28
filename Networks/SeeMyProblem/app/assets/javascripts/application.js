@@ -17,7 +17,7 @@
 $(document).ready(function(e) { 
 	$(".EP").hide();
 	$("button.edit_button").on("click",function(){
-		console.log("Edit Button clicked");
+		
 		$(this).parent().parent().next().toggle();
 	})
 
