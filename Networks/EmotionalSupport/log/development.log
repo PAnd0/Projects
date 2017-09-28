@@ -2548,3 +2548,33 @@ Processing by PostsController#destroy as JS
 Completed 200 OK in 23ms (Views: 12.7ms | ActiveRecord: 1.9ms)
 
 
+Started PUT "/posts/11" for 127.0.0.1 at 2017-09-28 11:43:05 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"Kuuuu", "content"=>"KP"}, "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Kuuuu"], ["updated_at", "2017-09-28 16:43:05.958870"], ["id", 11]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.9ms)
+  Rendered posts/update.js.erb (7.1ms)
+Completed 200 OK in 64ms (Views: 18.8ms | ActiveRecord: 4.3ms)
+
+
+Started PUT "/posts/13" for 127.0.0.1 at 2017-09-28 11:43:12 -0500
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"M", "content"=>"Moooooooo"}, "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "Moooooooo"], ["updated_at", "2017-09-28 16:43:12.976142"], ["id", 13]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/update.js.erb
+  Rendered posts/_post.html.erb (2.4ms)
+  Rendered posts/update.js.erb (5.7ms)
+Completed 200 OK in 30ms (Views: 17.2ms | ActiveRecord: 2.3ms)
+
+
