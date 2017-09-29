@@ -50,6 +50,8 @@
 	top: 0;
 	text-align: center;
 	margin-left: 5%;
+	background-color: #4CAF50; /* Green */
+	cursor: pointer;
 }
 
 #message_one {
@@ -128,8 +130,13 @@ tbody > tr > td {
 
 
 .comment {
-	padding: 50px;
+	padding-bottom: 50px;
+	padding-top: 25px;
+	padding-left: 35px;
     display: none;
+    text-align: left;
+    font-size: 20px;
+    width: 81%;
 }
 .entry > div {
 	float: left;
@@ -138,11 +145,15 @@ tbody > tr > td {
 .half {
 	display:inline-block;
 	width: 49%;
-	border:solid blue;
+
 	margin-left: 2px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
+	background-color: yellow;
+	border: none;
+    color: black;
+  	cursor: pointer;
 
 }
 
@@ -152,5 +163,48 @@ tbody > tr > td {
 	margin:0 auto;
 	overflow: hidden;
 }
+ .EP {
+	padding-bottom: 50px;
+	padding-top: 25px;
+	padding-left: 35px;
+    display: none;
+    text-align: left;
+    font-size: 20px;
+    width: 30%;
+    border: solid red;
+    margin-left:13%;
+ }
+.lefter {
+	display: table-cell;
+	border:solid red;
+	width: 50%;
+   
+}
+.wordy {
+	font-size: 10px;
+}
 
+.field {
+	display: table;
+	width: 100%;
+}
+
+#ajax_create_post{
+	position: sticky;
+	bottom:0;
+	width: auto;
+	border:solid red;
+	display: none;
+	background-color: orange;
+}
+.collection2 {
+	width:85% ;
+	border:solid red;
+	margin:0 auto;
+}
+.field2 {
+	display: inline-block;
+	border:solid red;
+	margin:0 auto;
+}
 

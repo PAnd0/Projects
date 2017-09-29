@@ -15,12 +15,26 @@
 //= require_tree .
 
 $(document).ready(function(e) { 
-	$(".EP").hide();
-	$("button.edit_button").on("click",function(){
+	
+	$(".post").click(function(){
 		
-		$(this).parent().parent().next().toggle();
+		$(this).find(':nth-child(4)').slideToggle("slow");
+        
+    });
+
+	$("div.edit_button").on("click",function(){
+		
+		$(this).parent().next().slideToggle()
 	})
 
+	$('div#summon_create_post').on("click",function(){
+		
+		$("#ajax_create_post").slideToggle();
+	})
+
+	$("div.cancel_post").on("click",function(){
+		$("#ajax_create_post").slideToggle();
+	})
 	// $('a:contains("Edit")').on("click",function(e){
 	// 	console.log("Edit clicked");
 	// 	$("#EP").appendTo($(this).parent().parent())
@@ -77,4 +91,6 @@ $(document).ready(function(e) {
 			$("td:contains('Other')").parent().show();
 		}
 	})
+
+	
 });

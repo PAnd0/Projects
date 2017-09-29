@@ -39,34 +39,36 @@
 
 
 <br>
-<p>New post form with Ajax</p> 
-
+ 
+<div id="ajax_create_post">
 <%= form_for(@post, remote: true) do |f| %>
-    <div class="field">
+<div class="collection2">
+  
+
+    <div class="field2">
       <%= f.label :title %>
       <%= f.text_field :title, id: :post_title %>
     </div>
 
-    <div class="field">
+    <div class="field2">
       <%= f.label :content %>
       <%= f.text_area :content, id: :post_content %>
     </div>
 
-    <div class="field">
+    <div class="field2">
       <%= f.label :post_type %>
       <%= f.select :post_type, options_for_select([["Select One", ""], "1st", "2nd", "3rd", "Personal", "Other"]) %>
-
     </div>
 
-    <div class="actions">
+    <div class="actions field2">
       <%= f.submit %>
     </div>
+    <div class="field2 cancel_post"><BUTTON>Cancel Post</BUTTON></div>
 <% end %>
+</div>
 
+</div>
 
-
-<p>New post form without ajax</p>
-<%= link_to 'New Post', new_post_path %>
 
 
 

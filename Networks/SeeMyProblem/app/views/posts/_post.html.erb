@@ -1,26 +1,41 @@
-<div id="<%= post.id %>" class="entry">
+<div id="<%= post.id %>" class="post entry">
         <div id="head_short"><%= post.id %></div>
         <div id="head_wide"><%= post.title %></div>
         <div id="head_short"><%= post.post_type %></div>
+		<div class="comment post_comment_#<%= post.id %>"><%= post.content %></div>
+</div>        
 
-        
-        <div class="comment post_comment_#<%= post.id %>"><%= post.content %></div>
-         
-<%
-=begin %>
-        <div><%= link_to 'Show', post %></div>
-        <div><%= link_to 'Edit', edit_post_path(post), remote: true %></div>
-          <%
-=end %>
        
-      
-</div>
-
 <div class="entry">
-	 <div class="half"><button type="button" class="edit_button" data-target="#myupdatepost_<%= post.id %>">Edit</button></div>
+	 <div class="half edit_button" data-target="#myupdatepost_<%= post.id %>">Edit</div>
 	<div class="half"><%= link_to 'Destroy', post, method: :delete, remote: true %></div>
 </div>
 
+<div class="EP <%= post.id %>">
+<%= form_for(post, :method => :put, remote: true) do |form| %>
+
+	<div class="field">
+		<div class="lefter"><%= form.label :title, class: 'wordy' %></div>
+		<div class="lefter"><%= form.text_field :title, id: :post_title %></div>
+		
+	</div>
+
+	<div class="field">
+		<div class="lefter"><%= form.label :content, class: 'wordy' %></div>
+		<div class="lefter"><%= form.text_area :content, id: :post_content %></div>
+	</div>
+
+	<div class="field">
+		<div class="lefter"><%= form.label :post_type, class: 'wordy' %></div>
+		<div class="lefter"><%= form.select :post_type, options_for_select([["Select One", ""], "1st", "2nd", "3rd", "Personal", "Other"]) %></div>
+	</div>
+
+	<div class="actions">
+		<div class="lefter"><%= form.submit %></div> 
+	</div>
+
+<% end %>
+</div>
 
 <%
 =begin %>
@@ -40,8 +55,7 @@
        
       
 </tr>
-        <%
-=end %>
+    
 
 
 <tr class="EP <%= post.id %>">
@@ -69,4 +83,5 @@
 
 <% end %>
 </tr>
-
+    <%
+=end %>
