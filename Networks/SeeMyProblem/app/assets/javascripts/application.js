@@ -37,13 +37,9 @@ $(document).ready(function(e) {
 	})
 
 	var d = new Date();
-	
+
 document.getElementById("current_time").innerHTML = d.toDateString();
-	// $('a:contains("Edit")').on("click",function(e){
-	// 	console.log("Edit clicked");
-	// 	$("#EP").appendTo($(this).parent().parent())
-		
-	// });
+	
 	$("select.main_filter").change(function(){
 		
 		if($("select").val() == "1st"){
