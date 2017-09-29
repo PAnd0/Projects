@@ -1,14 +1,47 @@
+<div id="<%= post.id %>" class="entry">
+        <div id="head_short"><%= post.id %></div>
+        <div id="head_wide"><%= post.title %></div>
+        <div id="head_short"><%= post.post_type %></div>
+
+        
+        <div class="comment post_comment_#<%= post.id %>"><%= post.content %></div>
+         
+<%
+=begin %>
+        <div><%= link_to 'Show', post %></div>
+        <div><%= link_to 'Edit', edit_post_path(post), remote: true %></div>
+          <%
+=end %>
+       
+      
+</div>
+
+<div class="entry">
+	 <div class="half"><button type="button" class="edit_button" data-target="#myupdatepost_<%= post.id %>">Edit</button></div>
+	<div class="half"><%= link_to 'Destroy', post, method: :delete, remote: true %></div>
+</div>
+
+
+<%
+=begin %>
+
 <tr id="<%= post.id %>">
         <td><%= post.id %></td>
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
         <td><%= post.post_type %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><button type="button" class="edit_button" data-target="#myupdatepost_<%= post.id %>">Edit</button></td>
-        <td><%= link_to 'Edit', edit_post_path(post), remote: true %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, remote: true %></td>
+
         
+        <td class="comment post_comment_#<%= post.id %>"><%= post.content %></td>
+         
+
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), remote: true %></td>
+  
+       
+      
 </tr>
+        <%
+=end %>
 
 
 <tr class="EP <%= post.id %>">

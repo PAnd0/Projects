@@ -99,20 +99,58 @@
 	width: 75%;
 	text-align: center;
 	margin:0 auto;
+	border-collapse: collapse;
 }
 
 th {
 	border: solid red;
+	background-color: green;
 }
 
 #head_short{
 	width: 20%;
+	height: 40px;
 }
 
 #head_wide{
 	width: 60%;
+	height: 40px;
 }
 
 
+
+tbody > tr > td {
+	text-align: left;
+	padding:10px;
+	border:solid green;
+}
+
+
+
+.comment {
+	padding: 50px;
+    display: none;
+}
+.entry > div {
+	float: left;
+}
+
+.half {
+	display:inline-block;
+	width: 49%;
+	border:solid blue;
+	margin-left: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+
+}
+
+.entry {
+	border:solid red;
+	width: 74%;
+	margin:0 auto;
+	overflow: hidden;
+}
 
 
