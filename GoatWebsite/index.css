@@ -1,0 +1,84 @@
+.welcome_banner {
+	margin-top: -20px;
+	text-align: center;
+	font-size: 25px;
+}
+img.flying_goat_pic {
+	height:300px; 
+	width:1000px;
+	margin-left: 12%;
+}
+
+.label1{
+	margin-top: 10px;
+	width: 25%;
+	font-size: 20px;
+	margin-left: 70px;
+}
+
+.messages {
+	width: 50%;
+	margin-left: 70px;
+	height: 200px;
+	font-size: 20px;
+}
+
+.crazy_goat_lady_pic{
+	height: 300px;
+	width: 300px;
+	position: relative;
+    top: -659px;
+    right: 150px;
+	float: right;
+	
+}
+
+.jumbo_1 {
+	width: 85%;
+	margin-left:70px;
+	text-align: center;
+}
+
+.row {
+	width:90%;
+	margin-left: 5%;
+	
+}
+.vet_pan {
+	height: 350px;
+
+}
+
+.vet_1 {
+	height: 150px;
+	width: 150px;
+	margin-left: 100px;
+}
+
+
+.jumbo_2 {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.goat_pic {
+	width: 355px;
+	height: 150px;
+}
+
+.history-btn {
+	width:100px;
+	margin-left: -10px;
+	display: inline-block;
+}
+
+.gallery-btn {
+
+	display: inline-block;
+	width:100px;
+	margin-left: 150px;
+}
+
+.container {
+	border:solid red;
+}
