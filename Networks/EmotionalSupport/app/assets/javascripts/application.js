@@ -16,7 +16,6 @@
 $(document).ready(function(e){
 	$(".EP").hide();
 	$("button.edit_button").on("click",function(){
-
 		$(this).parent().parent().next().toggle();
 	})
 })

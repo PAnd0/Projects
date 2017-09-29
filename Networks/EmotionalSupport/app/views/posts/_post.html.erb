@@ -4,11 +4,26 @@
         <td><%= post.content %></td>
         <td><%= link_to 'Show', post %></td>
         <td><button type="button" class="edit_button" data-target="#myupdatepost_<%= post.id %>">Edit</button></td>
-        <td><%= link_to 'Destroy', post, method: :delete, remote: true %></td>
-        
+        <td><%= link_to 'Destroy', post, method: :delete, remote: true %></td> 
 </tr>
+<% post.comments.each do |comment| %>
+<tr id="comments_<%= comment.id %>">
+	<td><p><%= comment.user.email %></p></td>
+	<td><p><%= comment.content %></p></td>	
 
+	<% if current_user == comment.user %>
+	<td><%= link_to "Delete Comment", [comment.post, comment], method: :delete %></td>	
+	<td><%= link_to "Edit Comment", edit_post_comment_path(comment.post,comment) %></td>	<% end %>
+</tr>
+	<% end %>
 
+	<tr class="Comm <%= post.id %>">
+		<%= form_for([post,post.comments.build], remote: true) do |f| %>
+			<td><%= f.text_area :content %></td> 
+			<td><%= f.submit %></td>
+	<% end %>
+	</tr>
+	
 <tr class="EP <%= post.id %>">
 <%= form_for(post, :method => :put, remote: true) do |form| %>
 
@@ -28,5 +43,7 @@
 
 <% end %>
 </tr>
+
+
 
 

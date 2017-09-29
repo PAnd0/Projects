@@ -1,0 +1,12 @@
+console.log("ajax working coment created");
+$("textarea#comment_content").val("");
+
+
+console.log("<%= @post.title %>");
+console.log("<%= @comment.content %>");
+$("tr#<%= @post.id %>").replaceWith("<%= j render @post %>");
+$("tr.EP <%= @post.id %>").remove();
+$("tr.EP <%= @post.id %>").remove();
+$("tr.EP <%= @post.id %>").remove();
+$("tr.EP <%= @post.id %>").remove();
+$("tr.EP <%= @post.id %>").remove();

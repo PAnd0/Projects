@@ -2,15 +2,23 @@ class CommentsController < ApplicationController
 	before_action :find_post
 	before_action :find_comment, only: [:destroy,:edit,:update,:comment_owner]
 	before_action :comment_owner, only: [:destroy,:edit, :update]
+	
 	def create
-		@comment = @post.comments.create(params[:comment].permit(:content))
+		
+		@comment = @post.comments.new(comment_params)
 		@comment.user_id = current_user.id
 		@comment.save
-
-		if @comment.save
-			redirect_to post_path(@post)
-		else
-			render 'new'
+		
+		respond_to do |format|
+			if @comment.save
+				format.html { redirect_to @post, notice: 'Comment was successfully created' }
+				format.json { render :show, status: :created, location: @post }
+        		format.js
+			else
+				format.html { render :new }
+        		format.json { render json: @post.errors, status: :unprocessable_entity }
+        		format.js
+			end
 		end
 	end
 
@@ -45,5 +53,9 @@ class CommentsController < ApplicationController
 			flash[:notice] = "Nice trick ;P"
 			redirect_to @post
 		end
+	end
+
+	def comment_params
+		params.require(:comment).permit(:content)
 	end
 end

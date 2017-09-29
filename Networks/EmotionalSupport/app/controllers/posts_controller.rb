@@ -28,16 +28,14 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-   # @post.id = Post.all.count + 1
-   binding.pry
+    @post.user_id = current_user.id
+  
     respond_to do |format|
       if @post.save
-        
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
         format.js
       else
-        
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
         format.js
@@ -81,7 +79,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content,:user_id)
       
     end
 end
