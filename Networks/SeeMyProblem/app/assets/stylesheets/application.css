@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+.title {
+	display: block;
+	font-size: 40px;
+	margin-top: 7px;
+}
+.web-title {
+	position: absolute;
+	left: 50px;
+}
+.current_time {
+	position: absolute;
+	right: 50px;
+}
+
+#web-title_and_current_time{
+	border-bottom: solid red;
+	height: 41px;
+}
+
+#user_intro {
+	border: solid red;
+	position: sticky;
+	display: inline-block;
+	top: 0;
+	margin-left: 17%;
+	width: 32%;
+	text-align: center;
+}
+
+#summon_create_post {
+	display: inline-block;
+	border: solid red;
+	width: 10%;
+	position: sticky;
+	top: 0;
+	text-align: center;
+	margin-left: 5%;
+}
+
+#message_one {
+	border: solid red;
+	margin-top: 10px;
+	text-align: center;
+	
+}
+
+#message_one > p {
+	font-size: 20px;
+}
+
+#filter_buttons {
+	border: solid red;
+}
+#collection {
+	width: 99%;
+	position: relative;
+	left: 1%;
+	margin-left: 5px;	
+}
+
+.filter_button{
+	background-color: #4CAF50; /* Green */
+	border: none;
+    color: white;
+  	padding: 15px 32px;
+    text-align: center; 
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block; 
+    width: 16%;
+
+    
+}
+table {
+	height: 400px;
+	width: 400px;
+	margin: 0; padding: 0;
+	border-collapse: collapse;
+}
+tr {
+	display:inline-block;
+}
+
+
+
+

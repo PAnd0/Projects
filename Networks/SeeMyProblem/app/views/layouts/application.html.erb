@@ -14,11 +14,27 @@
   </head>
 
   <body>
-    <h1>SeeMyProblem</h1>
+
+    <div id="web-title_and_current_time">
+      <h1 class="title web-title">See My Problem</h1>
+      <h1 class="title current_time">Here goes current time</h1>
+    </div>
+    
+    <div id="summon_create_post">
+      <p>Create Post</p>
+    </div>
+
+    <div id="user_intro">
   	<% if user_signed_in? %>
   		<p>Hello, <%= current_user.username %> - <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></p>
   	<% end %>
+    </div>
 
+    <div id="message_one">
+      <p>Evolutionary Iteration of the Problem Network -- Level 1 ^^</p>
+    </div>
+
+    
     <%= yield %>
   </body>
 </html>
