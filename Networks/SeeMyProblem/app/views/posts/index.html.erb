@@ -1,42 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-         <button class="filter_button">All</button>
-      </td>
-      <td>
-         <button class="filter_button">1st</button>
-      </td>
-      <td>
-         <button class="filter_button">2nd</button>
-      </td>
-      <td>
-         <button class="filter_button">3rd</button>
-      </td>
-      <td>
-         <button class="filter_button">Personal</button>
-      </td>
-      <td>
-         <button class="filter_button">Other</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<div id="filter_buttons">
-  <div id="collection">
-    
-  
-    <button class="filter_button">All</button>
-    <button class="filter_button">1st</button>
-    <button class="filter_button">2nd</button>
-    <button class="filter_button">3rd</button>
-    <button class="filter_button">Personal</button>
-    <button class="filter_button">Other</button>
-  </div>
-</div>
 <select class="main_filter">
   <option value="All" selected="selected">All</option>
   <option value="1st">1st</option>
@@ -45,20 +8,44 @@
   <option value="Personal">Personal</option>
   <option value="Other">Other</option>
 </select>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Type</th>
-      <th colspan="3"></th>
+
+<div id="filter_buttons">
+  <div id="collection">
+    <button class="filter_button">All</button>
+    <button class="filter_button">1st</button>
+    <button class="filter_button">2nd</button>
+    <button class="filter_button">3rd</button>
+    <button class="filter_button">Personal</button>
+    <button class="filter_button">Other</button>
+  </div>
+</div>
+  <div id="message_two">
+    <p>Click the post to see the details ^^</p>
+  </div>
+
+<table id="awesome_table">
+  <thead id="awesome_head">
+    <tr id="awesome_first_row">
+      <th id="head_short">Post#</th>
+      <th id="head_wide">Title</th>
+      <th id="head_short">Type</th>
     </tr>
   </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+
+
+<table>
+  
 
   <tbody>
     <%= render @posts %>
   </tbody>
 </table>
+
+
 
 <br>
 <p>New post form with Ajax</p> 
