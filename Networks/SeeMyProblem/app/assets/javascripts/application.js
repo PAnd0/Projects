@@ -35,6 +35,10 @@ $(document).ready(function(e) {
 	$("div.cancel_post").on("click",function(){
 		$("#ajax_create_post").slideToggle();
 	})
+
+	var d = new Date();
+	
+document.getElementById("current_time").innerHTML = d.toDateString();
 	// $('a:contains("Edit")').on("click",function(e){
 	// 	console.log("Edit clicked");
 	// 	$("#EP").appendTo($(this).parent().parent())

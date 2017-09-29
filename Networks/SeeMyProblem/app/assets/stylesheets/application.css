@@ -22,7 +22,7 @@
 	position: absolute;
 	left: 50px;
 }
-.current_time {
+#current_time {
 	position: absolute;
 	right: 50px;
 }

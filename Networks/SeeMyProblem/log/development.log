@@ -11872,3 +11872,33 @@ Processing by PostsController#create as JS
 Completed 200 OK in 40ms (Views: 25.9ms | ActiveRecord: 3.4ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2017-09-29 07:48:09 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [12 times] (19.7ms)
+  Rendered posts/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 53ms (Views: 48.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-29 07:48:49 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [12 times] (22.1ms)
+  Rendered posts/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-09-29 07:51:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered collection of posts/_post.html.erb [12 times] (22.8ms)
+  Rendered posts/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 82ms (Views: 77.7ms | ActiveRecord: 0.6ms)
+
+

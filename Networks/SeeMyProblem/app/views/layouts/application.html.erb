@@ -5,7 +5,7 @@
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
-    <title>SeeMyProblem</title>
+    <title>See My Problem</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,7 +17,7 @@
 
     <div id="web-title_and_current_time">
       <h1 class="title web-title">See My Problem</h1>
-      <h1 class="title current_time">Here goes current time</h1>
+      <h1 id="current_time" class="title"></h1>
     </div>
     
     <div id="summon_create_post">
