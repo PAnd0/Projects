@@ -1,0 +1,346 @@
+#promo .jumbotron {
+  border-radius:20px;
+  padding:40px;
+  background-color:rgba(255,255,255,0.75);
+}
+
+
+.our_mission {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  grid-template-rows:repeat(4,1fr);
+  grid-template-areas: 
+      "p_1 ." 
+      "para_1 crazy_goat_lady_pic" 
+      "para_2 ." 
+      "para_3 .";
+  grid-column-gap:10px;
+  grid-row-gap:5px;
+  justify-items:center;
+  align-items:center;
+  /*background:url(../../assets/img/free-country-wallpaper-1.jpg) no-repeat;*/
+  background-size:cover;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #ffcccc;
+}
+
+
+
+.p_1 {
+  grid-area:p_1;
+  
+  align-self: center;
+  border-bottom: solid red;
+  border-left: 10px solid red;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  font-size: 1.75em;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-align: left  text-transform: uppercase;
+}
+
+.para_1 {
+  grid-area:para_1;
+  
+  
+  align-self: start;
+  border-bottom: solid red;
+  border-left: 10px solid red;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  font-size: 1.75em;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.para_2 {
+  grid-area:para_2;
+  
+  align-self: start;
+  border-bottom: solid red;
+  border-left: 10px solid red;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  font-size: 1.75em;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.para_3 {
+  grid-area:para_3;
+  
+  align-self: start;
+  border-bottom: solid red;
+  border-left: 10px solid red;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  font-size: 1.75em;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.crazy_goat_lady_pic {
+  grid-area:crazy_goat_lady_pic;
+  align-self: start;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+  padding:40px;
+  text-align:left;
+  font-family:'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight:normal;
+  font-size:40px;
+  letter-spacing:.2em;
+  line-height:1.1em;
+  margin:0px;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap:10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.vet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 50px;
+  grid-row-gap:10px;
+  min-height: 250px;
+  word-wrap: break-word;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #b3d9ff;
+  border-radius: 5px;
+}
+.vet:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.vet > * {
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-transform: uppercase;
+  font-size: 17px;
+
+}
+
+.monial {
+  grid-area: monial;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  align-self: center;
+  max-width: 100%;
+  
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+.name {
+  grid-area: name;
+  align-self: center;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.number {
+  grid-area: number;
+  align-self: center;
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+  padding:40px;
+  text-align:left;
+  font-family:'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight:normal;
+  font-size:40px;
+  letter-spacing:.2em;
+  line-height:1.1em;
+  margin:0px;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+.our_babies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap:10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.goat {
+  display: grid;
+  grid-template-columns: 10px 1fr 1fr 10px;
+  grid-template-rows: 3fr 1fr 1fr 1fr;
+  min-height: 250px;
+  grid-gap: 5px;
+  grid-template-areas: 
+    ". goat_pic goat_pic ."
+    ". self_intro self_intro ."
+    ". age age ."
+    ". history_modal gallery_modal .";
+   
+}
+
+
+
+.goat_pic {
+  grid-area:goat_pic;
+  background:url(../../assets/img/3E2E8FEF00000578-0-image-m-164_1489282801514.jpg) no-repeat;
+  background-size:cover;
+}
+
+.self_intro {
+  grid-area: self_intro;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-transform: uppercase;
+}
+
+.age {
+  grid-area: age;
+  text-align: center;
+  align-self: center;
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-transform: uppercase;
+
+}
+
+.history_modal {  
+  grid-area: history_modal;
+  background-color:DodgerBlue;
+  color: white;
+  font-size: 20px;
+  min-height: 80px;
+}
+
+.gallery_modal {
+  grid-area: gallery_modal;
+  background-color: MediumSeaGreen;
+  color: white;
+  font-size: 20px;
+  min-height: 80px;
+}
+
+.back_button {
+  background-color:DodgerBlue;
+  color: white;
+  font-size: 20px;
+  min-height: 50px;
+  min-width: 100%;
+  text-align: center;
+}
+
+.modal-header {
+  background-color:MediumSeaGreen;
+  color: white;
+  font-size: 20px;
+  min-height: 50px;
+  min-width: 100%;
+  text-align: center;
+}
+
+.modal-body > * {
+  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  letter-spacing: .2em;
+  line-height: 1.1em;
+  margin:0px;
+  text-transform: uppercase;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.contact_us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "sign sign"
+  "num email"
+  "fb fb";
+  max-height: 250px;
+  margin-top: 50px;
+}
+
+.contact_sign {
+  grid-area:sign;
+   justify-self: center;
+    align-self:center;
+}
+.contact_num {
+  grid-area: num;
+   justify-self: center;
+    align-self:center;
+}
+.contact_email {
+  grid-area: email;
+   justify-self: center;
+    align-self:center;
+}
+
+.contact_fb {
+  grid-area: fb;
+  justify-self: center;
+  align-self:center;
+}
+.footer {
+  background-color: #1e1e2f;
+  color: white;
+  text-align: center;
+}
+
+.footer > p {
+  font-size: 17px;
+}
