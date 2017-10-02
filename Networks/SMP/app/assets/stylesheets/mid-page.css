@@ -1,0 +1,20 @@
+.mid_page {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100px 1fr;
+	grid-template-areas: 
+	"intro intro"
+	"the_posts the_posts";
+}
+
+.jumbotron {
+	grid-area:intro;
+
+}
+
+.the_posts {
+	grid-area: the_posts;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+}

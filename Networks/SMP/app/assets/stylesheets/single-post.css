@@ -1,0 +1,61 @@
+.single_post {
+	display: grid;
+	grid-template-columns:repeat(4,1fr);
+	grid-template-rows: repeat(3,1fr);
+	grid-template-areas: 
+	"post_title post_title post_title post_type"
+	"post_content post_content post_content post_content"
+	"edit_button edit_button delete_button delete_button";
+	min-height: 200px;
+	
+	margin-bottom: 30px;
+	
+	
+}
+
+
+.post_title{
+	grid-area: post_title;
+	background-color: #00b300;
+	border-top-left-radius: 10px;
+	color: white;
+	text-align: center;
+	align-self: stretch;	
+}
+.post_title > p {
+	margin-top:20px;
+}
+.post_content{
+	grid-area: post_content;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #ccffcc;
+	font-size: 15px;
+	word-wrap: break-word;
+
+}
+
+.post_content > p {
+	display:inline-block;
+}
+.post_type{
+	grid-area: post_type;
+	background-color: #8080ff;
+	text-align: center;
+	border-top-right-radius: 10px;
+	color: white;
+	align-self: stretch;
+	min-height: 100%;
+}
+.post_type > p {
+	margin-top:20px;
+}
+.edit_button{
+	grid-area: edit_button;
+}
+
+.delete_button{
+	grid-area: delete_button;
+}

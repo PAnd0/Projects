@@ -1,0 +1,27 @@
+.header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows:50px 50px;
+	grid-template-areas: 
+	"web_title time"
+	"web_title time";
+	background-color:#7575a3;
+	background: cover;
+}
+
+.web_title {
+	grid-area: web_title;
+	
+	text-align: left;
+	align-self: center;
+	font-size: 30px;
+	margin-left: 30px;
+}
+
+.time {
+	grid-area: time;
+	
+	text-align: center;
+	align-self: center;
+	font-size: 25px;
+}
