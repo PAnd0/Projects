@@ -3480,3 +3480,1816 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 2.1ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20171005171108)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20171005171108)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "post_id" integer, "c_audio" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171005171108"]]
+  [1m[35m (69.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 12:21:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 174ms (Views: 134.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 12:55:10 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.3ms)
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_show, application/_show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    11:         <div><%= post.title %></div>
+    12:         
+    13:         <div>
+    14:           <%= render 'show' %>
+    15:         </div>
+    16:         
+    17:         <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310513840000'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310513840000'
+Started GET "/" for 127.0.0.1 at 2017-10-05 12:56:00 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 20ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 12:56:00 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_show, application/_show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    11:         <div><%= post.title %></div>
+    12:         
+    13:         <div>
+    14:           <%= render 'show' %>
+    15:         </div>
+    16:         
+    17:         <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310474847700'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310474847700'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 12:56:57 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.3ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial posts/_show, application/_show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views"
+  * "/Users/RaymondChristian/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    11:         <div><%= post.title %></div>
+    12:         
+    13:         <div>
+    14:           <%= render 'show', post: post %>
+    15:         </div>
+    16:         
+    17:         <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310512711920'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310512711920'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:06:23 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/posts_controller.rb:8:in `index'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:11:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (46.3ms)
+Completed 200 OK in 123ms (Views: 81.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:12:56 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 57ms (Views: 48.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:17:13 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.8ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (190.5ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `remote_form_for' for #<#<Class:0x007fe4e12260f0>:0x007fe4e21c2b80>):
+    28:                 </div>
+    29:             <% end %>
+    30: 
+    31:             <% remote_form_for [post, Comment.new] do |f| %>
+    32:                 <p>
+    33:                     <%= f.label :body, "New Comment" %><br/>
+    34:                     <%= f.text_area :body %>
+  
+app/views/posts/index.html.erb:31:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310511411460'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310511411460'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:17:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.6ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (169.9ms)
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_comments_path' for #<#<Class:0x007fe4e12260f0>:0x007fe4e38f22b0>
+Did you mean?  posts_path):
+    28:                 </div>
+    29:             <% end %>
+    30: 
+    31:             <% form_for [post, Comment.new] do |f| %>
+    32:                 <p>
+    33:                     <%= f.label :body, "New Comment" %><br/>
+    34:                     <%= f.text_area :body %>
+  
+app/views/posts/index.html.erb:31:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310523541280'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310523541280'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:21:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.1ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (181.7ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_comments_path' for #<#<Class:0x007fe4e12260f0>:0x007fe4e489f780>
+Did you mean?  posts_path):
+    28:                 </div>
+    29:             <% end %>
+    30: 
+    31:             <%= form_for([post, post.comments.build]) do |f| %>
+    32:                 <p>
+    33:                     <%= f.label :body, "New Comment" %><br/>
+    34:                     <%= f.text_area :body %>
+  
+app/views/posts/index.html.erb:31:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310531752500'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310531752500'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:22:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.3ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (171.3ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `post_comments_path' for #<#<Class:0x007fe4e12260f0>:0x007fe4e1274778>
+Did you mean?  posts_path):
+    28:                 </div>
+    29:             <% end %>
+    30: 
+    31:             <%= form_for([post, Comment.new]) do |f| %>
+    32:                 <p>
+    33:                     <%= f.label :body, "New Comment" %><br/>
+    34:                     <%= f.text_area :body %>
+  
+app/views/posts/index.html.erb:31:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310503492760'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310503492760'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:33:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (52.6ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `body' for #<Comment:0x007fe4deedf0d8>):
+    31:             <%= form_for([post, Comment.new]) do |f| %>
+    32:                 <p>
+    33:                     <%= f.label :body, "New Comment" %><br/>
+    34:                     <%= f.text_area :body %>
+    35:                 </p>
+    36:                 <p><%= f.submit "Add Comment"%></p>
+    37:             <% end %>
+  
+app/views/posts/index.html.erb:34:in `block (2 levels) in _app_views_posts_index_html_erb___3354076757440315244_70310514581920'
+app/views/posts/index.html.erb:31:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310514581920'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310514581920'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:34:06 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.4ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 73ms (Views: 65.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:35:24 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:38:31 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.4ms)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (474.7ms)
+Completed 500 Internal Server Error in 563ms (ActiveRecord: 6.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x007fe4e4897490>:0x007fe4e48953e8>
+Did you mean?  format
+               formats
+               formats=
+               form_for
+               form_tag
+               form_with
+               fork):
+    34:                     <%= f.label :body, "New Comment" %><br/>
+    35:                     <p>Here goes the audio recorder</p>
+    36:                     <div class="field-2" >
+    37:                         <%= form.label :audio %>
+    38:                         <%= form.text_field :audio, id: :sound, readonly: true%>
+    39:                     </div>
+    40:                 </p>
+  
+app/views/posts/index.html.erb:37:in `block (2 levels) in _app_views_posts_index_html_erb___3354076757440315244_70310531743380'
+app/views/posts/index.html.erb:32:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310531743380'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310531743380'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:38:52 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.5ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `audio' for #<Comment:0x007fe4e39208b8>
+Did you mean?  c_audio):
+    35:                     <p>Here goes the audio recorder</p>
+    36:                     <div class="field-2" >
+    37:                         <%= f.label :audio %>
+    38:                         <%= f.text_field :audio, id: :sound, readonly: true%>
+    39:                     </div>
+    40:                 </p>
+    41:                 <p><%= f.submit "Add Comment"%></p>
+  
+app/views/posts/index.html.erb:38:in `block (2 levels) in _app_views_posts_index_html_erb___3354076757440315244_70310531693720'
+app/views/posts/index.html.erb:32:in `block in _app_views_posts_index_html_erb___3354076757440315244_70310531693720'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___3354076757440315244_70310531693720'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:39:03 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 94ms (Views: 87.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:40:50 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.2ms)
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 121ms (Views: 111.8ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/posts/12/comments" for 127.0.0.1 at 2017-10-05 13:41:03 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7qShbgrr8h85M9DmaTwBuuHSBuPFhMrre4YBYg03BiWidyxxFH6s7pl3OsaCELd4VJXWh0GfJX1GhL3qn94Iwg==", "comment"=>{"c_audio"=>""}, "post_id"=>"12"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:41:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 69ms (Views: 63.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:42:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 93ms (Views: 85.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:43:42 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.8ms)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 83ms (Views: 76.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/posts/11/comments" for 127.0.0.1 at 2017-10-05 13:43:59 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GAI5vKZXrJBBqPHMNHh/D0sV27UV4WCXJJslQayXCnNU0bSjuMLyYeHsG+zfVMnN/lIL0ZH6jwEZmZnJPn4ElA==", "comment"=>{"c_audio"=>""}, "post_id"=>"11"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:48:41 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.2ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 131ms (Views: 122.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:50:20 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.9ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 109ms (Views: 102.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts/11/comments" for 127.0.0.1 at 2017-10-05 13:56:37 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uuCfw45ICZoI2dJquU+rS4JvcOdf95Rt2eC4bi08IXf2MxLckN1Xa6idOEpSYx2JNyigg9vse/vk4gTmv9UvkA==", "comment"=>{"c_audio"=>""}, "post_id"=>"11"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:57:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.0ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 102ms (Views: 90.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 13:59:19 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.5ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 90ms (Views: 82.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:00:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.8ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 118ms (Views: 110.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts/11/comments" for 127.0.0.1 at 2017-10-05 14:00:23 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WsZdIYHP3J+bLEFKgLRyR9TXFAd0RXTVTsgPwRvYjQAWFdA+n1qCbjtoq2prmMSFYZDEY/Bem0NzyrNJiTGD5w==", "comment"=>{"c_audio"=>""}, "post_id"=>"11"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started DELETE "/posts/11" for 127.0.0.1 at 2017-10-05 14:01:01 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WsZdIYHP3J+bLEFKgLRyR9TXFAd0RXTVTsgPwRvYjQAWFdA+n1qCbjtoq2prmMSFYZDEY/Bem0NzyrNJiTGD5w==", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 11]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 11]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 16ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:01:01 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.1ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 106ms (Views: 97.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:01:28 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.3ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 131ms (Views: 122.1ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/posts/12" for 127.0.0.1 at 2017-10-05 14:01:33 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dnSFvH1pvehvNG9bzO8h7dM4gx32QN7j5m+RQAjDrwU6pwijY/zjGc9whXsnw5cvZn9TeXJbMXXbbS3Imiqh4g==", "id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 12]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:01:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (11.6ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 85ms (Views: 78.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:01:57 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.6ms)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 152ms (Views: 89.7ms | ActiveRecord: 6.3ms)
+
+
+Started DELETE "/posts/13" for 127.0.0.1 at 2017-10-05 14:02:01 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n/bYRnGOs8lmmSIK+bMRfrYbBmVrwDFAuSyKzIvbTLjTJVVZbxvtOMbdyCoSn6e8A1zWAe/b3taELjZEGTJCXw==", "id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 13]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#destroy, rendering head :no_content
+Completed 204 No Content in 195ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:02:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 137ms (Views: 78.9ms | ActiveRecord: 5.3ms)
+
+
+Started DELETE "/posts/14" for 127.0.0.1 at 2017-10-05 14:02:21 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sYUKJ9RWC9GpkuSmuowMQKbBYWa2eooTAbyXeGCFOLT9Voc4ysNVIAnWDoZRoLqCE4axAjJhZYU8vivw8mw2Uw==", "id"=>"14"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 14]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 14]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 14ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:02:21 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 80ms (Views: 74.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:06:52 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.1ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 129ms (Views: 83.3ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/posts/15/comments" for 127.0.0.1 at 2017-10-05 14:07:00 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QAemkp/itGLt5fwihqLt9Thk3PaFXixflEHh+OawIWkM1CuNgXfqk02hFgJtjls3jSMMkgFFw8mpQ11wdFkvjg==", "comment"=>{"c_audio"=>""}, "post_id"=>"15"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 15788ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:10:04 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.3ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 120ms (Views: 111.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:12:13 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+nd=( render 'new_comment' post: post );@output_buffer.safe_a
+                              ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:47: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/posts/index.html.erb:47: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:12:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+nd=( render 'new_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:13:24 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+ender 'posts/new_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:13:29 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+nder 'posts/_new_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:14:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+ender 'posts/new_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:14:43 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+nd=( render 'new_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:14:54 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+d=( render '_new_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:15:36 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+=( render '_make_comment' post: post );@output_buffer.safe_a
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:15:54 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected tLABEL, expecting ')'
+=( render(_make_comment) post: post );@output_buffer.safe_ap
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:16:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:31: syntax error, unexpected ',', expecting ')'
+end=( render('_make_comment'), post: post );@output_buffer.s
+                              ^):
+  
+app/views/posts/index.html.erb:31: syntax error, unexpected ',', expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:16:15 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.6ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 68ms (Views: 59.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:17:08 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.4ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 72ms (Views: 65.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:18:29 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.7ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 64ms (Views: 57.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:19:25 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.0ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 96ms (Views: 89.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:51:50 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.9ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 71ms (Views: 64.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:52:00 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.1ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 90ms (Views: 81.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:52:22 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.8ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 76ms (Views: 67.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:52:34 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.4ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 66ms (Views: 59.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:54:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 64ms (Views: 56.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:55:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 60ms (Views: 52.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 14:57:20 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 64ms (Views: 57.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:23:11 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.9ms)
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 331ms (Views: 234.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:23:31 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.7ms)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 95ms (Views: 85.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:23:44 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.8ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 115ms (Views: 106.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:23:51 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (13.1ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 77ms (Views: 70.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:26:27 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:70: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/posts/index.html.erb:70: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:27:47 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 239ms (Views: 230.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:28:38 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.0ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 92ms (Views: 82.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:33:17 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.7ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 200ms (Views: 192.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:34:01 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.9ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 76ms (Views: 69.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:34:25 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (117.6ms)
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (197.5ms)
+Completed 200 OK in 999ms (Views: 895.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:35:03 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.0ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 108ms (Views: 99.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/posts/16/comments" for 127.0.0.1 at 2017-10-05 15:35:11 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmpNFAuJIYrMGHox0dsjHYFgXKcDdVPeUncb0qNKGoQGucALFRx/e2xckBE695XfNCeMw4duvEhvdadaMaMUYw==", "comment"=>{"c_audio"=>""}, "post_id"=>"16"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 21ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:35:32 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 119ms (Views: 75.1ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/posts/16/comments" for 127.0.0.1 at 2017-10-05 15:35:36 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gqejk4FRgRTc1sKN85r9/GJYseVlgN0IwEBMdXPJ1+lWdC6Mn8Tf5XySKK0Ytks+1x9hgeGbMp79QvD94SDZDg==", "comment"=>{"c_audio"=>""}, "post_id"=>"16"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 67881ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:36:53 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.3ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 213ms (Views: 206.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:37:16 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.3ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 90ms (Views: 81.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 15:38:45 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 102ms (Views: 94.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:29:07 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (11.0ms)
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 324ms (Views: 304.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:29:31 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 98ms (Views: 90.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:29:40 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.1ms)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 97ms (Views: 89.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:30:50 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 114ms (Views: 109.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:31:05 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.2ms)
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 221ms (Views: 192.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:31:15 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 88ms (Views: 80.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:31:32 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.3ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 190ms (Views: 171.2ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/posts/15" for 127.0.0.1 at 2017-10-05 16:31:51 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7CKzC2fUTd/NmElNleea8ATpL7xd74886YVo+D7YVy6g8T4UeUETLm3co21+yywysa7/2Nn0YKrUh9RwrDFZyQ==", "id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 15]]
+  [1m[35mSQL (16.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 15]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 476ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:31:51 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.8ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 202ms (Views: 159.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/posts/16" for 127.0.0.1 at 2017-10-05 16:31:55 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Qs6yU9Y/8dCcARXJk2WVfDeYr3KIXVnAgQnybrwQtnkOHT9MyKqvITxF/+l4SSO+gt9/FgxGtla8C07mLvm4ng==", "id"=>"16"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 16]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 16]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 15ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:31:55 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 87ms (Views: 78.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/posts/17" for 127.0.0.1 at 2017-10-05 16:31:59 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jFOEpZW6xj9coGvMSLX/bRXqmlsdOtQXm251q0QGz1nAgAm6iy+YzvzkgeyjmUmvoK1KP5khO4GmbMkj1u/Bvg==", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 17]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 17]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:31:59 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.1ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 86ms (Views: 81.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/18" for 127.0.0.1 at 2017-10-05 16:32:03 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pn9ZN8UCXlBUuZZbWsw6GCOUlzRgC5sOCNo27PqKjiLqrNQo25cAofT9fHux4IzaltNHUOQQdJg12IpkaGOAxQ==", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 18]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 18]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:03 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.5ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 62ms (Views: 57.3ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/posts/19" for 127.0.0.1 at 2017-10-05 16:32:06 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vhpw6YzJmTxfFuD1/1SL6BU2b4bbW9qnOcJLec250C0ayf32klzHzf9SCtUUeD0qoHG/4l9ANTEEwPfxX1Deyg==", "id"=>"19"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 19]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 19]]
+  [1m[35m (91.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 104ms (ActiveRecord: 93.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:06 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.6ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (20, 21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 121ms (Views: 113.3ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/posts/20" for 127.0.0.1 at 2017-10-05 16:32:09 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5VcnhjZMrnI9dCuUn7qF39ajN4cowsX4l1HuFtHB3N2phKqZKNnwg50wwbR0ljMdY+Tn46zZKm6qU1KeQyjSOg==", "id"=>"20"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 20]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 20]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 17ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:09 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.1ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (21, 22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 74ms (Views: 68.8ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/21" for 127.0.0.1 at 2017-10-05 16:32:12 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z2PRgKtyibQmy70lbKzVZLyaM87xR3sLx6TOISBDQlyDsFyftefXRYaPVwWHgGOmCd3jqnVclJ36pnKpsqpMuw==", "id"=>"21"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 21]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 21]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 11ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:12 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.9ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (22, 23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 64ms (Views: 59.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/posts/22" for 127.0.0.1 at 2017-10-05 16:32:15 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bjciRD7VflVd1gnCWYZ8G5seZEHy2uB1uGRX3EmvhCwi5K9bIEAgpP2S4+KyqsrZLlm0JXbBD+OFZutU20aKyw==", "id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 22]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 22]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 13ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:15 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (4.3ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (23, 24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 74ms (Views: 66.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/23" for 127.0.0.1 at 2017-10-05 16:32:18 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0ULZK0iOijCVnxU46GrN5swT6c0OfCLX2QCxHeyOm72dkVQ0VhvUwTXb/xgDRnskeVQ5qYpnzUHkAg2VfmeVWg==", "id"=>"23"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 23]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 23]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 12ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.3ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (24, 25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 63ms (Views: 57.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/posts/24" for 127.0.0.1 at 2017-10-05 16:32:21 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CmGR1EbrkxZWI9XV6+RahbrSge77lTbr1uKPayRwtlhGshzLWH7N5/ZnP/UAyOxHD5VRin+O2X3r4DPjtpm4vw==", "id"=>"24"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 24]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 24]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:21 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (25, 26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/posts/25" for 127.0.0.1 at 2017-10-05 16:32:24 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Hx+bZbpgKOxzTcrcds4RLQ5j5m93yKn0lpPB+MJx5CRTzBZ6pPV2HdMJIPyd4qfvuyQ2C/PTRmKrkX1wUJjqww==", "id"=>"25"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 25]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 25]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 15ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:24 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (26, 27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 58ms (Views: 51.7ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/posts/26" for 127.0.0.1 at 2017-10-05 16:32:26 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3bYjlcS1guna5XquZlxS8lA2r3K/fg/nhMJRqrY1CLORZa6K2iDcGHqhkI6NcOQw5XF/Fjtl4HG5wO0iJNwGVA==", "id"=>"26"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 26]]
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 26]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 14ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:26 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (27, 28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 63ms (Views: 57.5ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/posts/27" for 127.0.0.1 at 2017-10-05 16:32:29 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4rrdLV6LWjunDwXfGN/odh3hszqmhLoesvvSwFTpG0uuaVAyQB4EygdL7//z8160qKZjXiKfVYiP+W5IxgAVrA==", "id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 27]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 27]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:30 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.9ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (28, 29)[0m
+  Rendered posts/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 78ms (Views: 71.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/posts/28" for 127.0.0.1 at 2017-10-05 16:32:33 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jDvadWWSOwFIbc0jtKpcwxoii/fhADQpkVmuH3RL16vA6Fdqewdl8OgpJwNfhuoBr2Vbk2Ub27+sWxKX5qLZTA==", "id"=>"28"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 28]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 28]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:32:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:35:57 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.5ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 171ms (Views: 163.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:47:32 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (17.3ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 430ms (Views: 382.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:49:54 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (5.5ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 245ms (Views: 240.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 16:58:29 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (12.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 302ms (Views: 262.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:00:52 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.3ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 257ms (Views: 251.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:03:47 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (12.5ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 452ms (Views: 407.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:04:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.4ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 297ms (Views: 290.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:09:23 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (20.8ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 337ms (Views: 295.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:14:18 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (20.4ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (252.4ms)
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+    35:         <%= form_for([post, Comment.new]) do |f| %>
+    36:                 <div class="field-2" >
+    37:                     <%= f.label :audio %>
+    38:                     <%= f.text_field :c_audio, id= 'sound', readonly: true%>
+    39:                 </div>
+    40: 
+    41:                 <%= f.submit "Add Comment"%>
+  
+app/views/posts/index.html.erb:38:in `block (2 levels) in _app_views_posts_index_html_erb__3075783283188062752_70315488095040'
+app/views/posts/index.html.erb:35:in `block in _app_views_posts_index_html_erb__3075783283188062752_70315488095040'
+app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb__3075783283188062752_70315488095040'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:21:23 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (16.8ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 678ms (Views: 574.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:22:28 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:38: syntax error, unexpected $undefined, expecting ')'
+;@output_buffer.safe_append='\', readonly: true%>
+                              ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:42: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:260: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:263: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:265: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/posts/index.html.erb:38: syntax error, unexpected $undefined, expecting ')'
+app/views/posts/index.html.erb:42: syntax error, unexpected keyword_end, expecting ')'
+app/views/posts/index.html.erb:260: syntax error, unexpected keyword_end, expecting ')'
+app/views/posts/index.html.erb:263: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/posts/index.html.erb:265: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:23:14 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:38: syntax error, unexpected $undefined, expecting ')'
+;@output_buffer.safe_append='\', readonly: true%>
+                              ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:42: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                     ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:260: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:263: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/RaymondChristian/Desktop/Projects/Voix_0/Voix/app/views/posts/index.html.erb:265: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/posts/index.html.erb:38: syntax error, unexpected $undefined, expecting ')'
+app/views/posts/index.html.erb:42: syntax error, unexpected keyword_end, expecting ')'
+app/views/posts/index.html.erb:260: syntax error, unexpected keyword_end, expecting ')'
+app/views/posts/index.html.erb:263: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/posts/index.html.erb:265: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:29:52 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (13.4ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (3.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (156.4ms)
+Completed 200 OK in 452ms (Views: 394.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:30:33 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (43.0ms)
+  [1m[36mPost Load (48.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (163.7ms)
+Completed 200 OK in 1002ms (Views: 945.3ms | ActiveRecord: 49.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:48:30 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (101.1ms)
+  [1m[36mPost Load (108.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (423.9ms)
+Completed 200 OK in 914ms (Views: 729.1ms | ActiveRecord: 112.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-10-05 17:55:20 -0500
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (210.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/_form.html.erb (218.1ms)
+  [1m[36mPost Load (90.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 29[0m
+  Rendered posts/index.html.erb within layouts/application (1119.0ms)
+Completed 200 OK in 3921ms (Views: 2979.1ms | ActiveRecord: 301.1ms)
+
+
+Started POST "/posts/29/comments" for 127.0.0.1 at 2017-10-05 17:55:52 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XexFR7e0iOkGrsaqtf/9SRPol2CX0MmZjrKjTSAoOGARP8hYqSHWGKbqLIpe00uLpq9HBBPLJg+zsB/FssE2hw==", "comment"=>{"c_audio"=>"data:audio/mp3;codecs=opus;base64,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"}, "commit"=>"Add Comment", "post_id"=>"29"}
+  [1m[35m (46.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 406 Not Acceptable in 68193ms (ActiveRecord: 46.6ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/comments_controller.rb:13:in `create'

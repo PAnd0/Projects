@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:comments)
     @post = Post.new
   end
 
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
   
-   
+    ##maybe need to add something here to handle the comments
    
       if @post.save
         redirect_to posts_path
