@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 
+	
+	<p>
+  		<strong>Title:</strong>
+  		<%= post.title %>
+	</p>
+
 	<audio controls>
-  <source src="<%= @post.audio %>" type="audio/mp3">
+  		<source src="<%= post.audio %>" type="audio/mp3">
+	</audio>
   
 
-</audio>
-  
 
 
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+<%
+=begin %>
+	<%= link_to 'Back', posts_path %>
+<%
+=end %>

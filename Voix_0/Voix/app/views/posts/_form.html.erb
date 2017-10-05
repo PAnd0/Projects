@@ -10,28 +10,18 @@
       </ul>
     </div>
   <% end %>
-<%
-=begin %>
-  <div class="field">
-    <%= form.label :audio %>
-    <%= form.file_field :audio%>
-  </div>
 
-<%
-=end %>
-  <div class="field">
+
+  <div class="field-1">
     <%= form.label :title %>
     <%= form.text_field :title, id: :post_title %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
-  </div>
+  
 
-  <div class="field">
+  <div class="field-2" >
     <%= form.label :audio %>
-    <%= form.text_field :audio, id: :sound%>
+    <%= form.text_field :audio, id: :sound, readonly: true%>
   </div>
   
 
