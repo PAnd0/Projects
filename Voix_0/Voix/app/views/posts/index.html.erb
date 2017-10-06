@@ -1,5 +1,5 @@
 
-<div class="posts_n_comms">
+<div class="create_n_posts">
   
 
 
@@ -9,14 +9,15 @@
 
 
 <div class="create_post">
-<%= render 'form', post:@post%>  
+  <%= render 'form', post:@post%>  
 </div>
 
 
       <div class="posts_section">
         <% @posts.each do |post| %>
 
-            <div class="post_title">
+          <div class="single_post">
+             <div class="post_title">
               <%= post.title %>
             </div>
             
@@ -31,7 +32,10 @@
             <%= link_to 'Destroy', post, method: :delete %>
             <% end %>
             </div>
-            <div class="comments_section">
+
+          </div>
+           
+           
 
            
 
@@ -63,12 +67,16 @@
 
         
         <%= form_for([post, Comment.new]) do |f| %>
+          <div class="add_comment">
+            
+          
                 <div class="field_2_<%= post.id %>" >
                     <%= f.label :audio %>
                     <%= f.text_field :c_audio, id: 'sound', readonly: true%>
                 </div>
 
         <%= f.submit "Add Comment"%>
+        </div>
         <% end %>
          
 
@@ -290,7 +298,7 @@
 
                                   }
                                   </script>
-              </div>
+              
           <br>
         <% end %>
     </div>
