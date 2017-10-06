@@ -14,3 +14,5 @@
  *= require_self
  */
 @import url("audio_tag.css")
+@import url("sign_up.css")
+@import url("log_in.css")

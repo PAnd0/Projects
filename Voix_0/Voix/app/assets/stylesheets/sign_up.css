@@ -1,0 +1,55 @@
+.sign_up_form {
+	display: grid;
+	grid-template-columns: 30px 1fr 30px;
+	grid-template-rows: repeat(7, 70px);
+	grid-row-gap:10px; 
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 10%;
+
+	grid-template-areas:
+	". sign_up_text ." 
+	". username ."
+	". email ."
+	". password ."
+	". password_confirmation ."
+	". submit_button ."
+	". log_button .";
+	background-color: #00cc00;
+}
+
+.sign_up_text {
+	grid-area: sign_up_text;
+	font-size: 20px;
+	
+}
+
+.username {
+	grid-area: username;
+	min-height: 75%;
+}
+
+.email {
+	grid-area: email;
+	min-height: 75%;
+}
+
+.password {
+	grid-area: password;
+	min-height: 75%;
+}
+
+.password_confirmation {
+	grid-area: password_confirmation;
+	min-height: 75%;
+}
+
+.submit_button {
+	grid-area: submit_button;
+	min-height: 100%;
+}
+
+.log_button {
+	grid-area: log_button;
+	text-align: center;
+}
