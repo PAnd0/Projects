@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = params[:post_id]
-    binding.pry
+   
       if @comment.save
         flash[:notice] = 'Comment was successfully created.'
         redirect_to posts_path

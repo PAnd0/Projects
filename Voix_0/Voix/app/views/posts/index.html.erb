@@ -70,25 +70,27 @@
           <div class="add_comment">
             
           
-                <div class="field_2_<%= post.id %>" >
-                    <%= f.label :audio %>
-                    <%= f.text_field :c_audio, id: 'sound', readonly: true%>
+                <div class="field_2_<%= post.id %> comment_data_field" >
+                    <%= f.text_field :c_audio, id: 'sound', readonly: true, class: "form-control"%>
                 </div>
 
-        <%= f.submit "Add Comment"%>
-        </div>
+                <div class="add_comment_button">
+                   <%= f.submit "Add Comment"%>
+                </div>
+             
+          </div>
         <% end %>
          
 
-                <div class="wrapper-<%= post.id %>">
-                    <section class="main-controls-<%= post.id %>">
-                        <canvas class="visualizer-<%= post.id %>" height="60px"></canvas>
-                        <div id="buttons-<%= post.id %>">
-                            <button class="record-<%= post.id %>" onclick='recordFunction()'>Record</button>
-                            <button class="stop-<%= post.id %>">Stop</button>
+                
+                    <section class="main-controls-<%= post.id %> recorder">
+                        <canvas class="visualizer-<%= post.id %> vision" height="60px"></canvas>
+                        <div id="buttons-<%= post.id %> rec_stop_buttons">
+                            <button class="record-<%= post.id %> record_button" onclick='recordFunction()'>Record</button>
+                            <button class="stop-<%= post.id %> stop_button">Stop</button>
                         </div>
                     </section>
-                </div>
+                
                                   <script type="text/javascript">
 
                                       function recordFunction() {
@@ -195,7 +197,7 @@
                                                   base64data = reader.result;                
                                                   console.log(base64data);
                                                   audio.src = base64data;
-                                                  document.getElementsByClassName("field_2_<%= post.id %>")[0].children[1].value = audio.src;
+                                                  document.getElementsByClassName("field_2_<%= post.id %>")[0].children[0].value = audio.src;
                                               }
 
 

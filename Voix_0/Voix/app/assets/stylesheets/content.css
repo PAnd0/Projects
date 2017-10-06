@@ -18,7 +18,7 @@
 
 .posts_section {
 	grid-area: posts_section;
-	border:solid red;
+	
 }
 
 .single_post {
@@ -32,6 +32,9 @@
 .post_title {
 	grid-area: post_title;
 	text-align: center;
+	border-right: solid black;
+	border-left: solid black;
+
 }
 
 .post_audio {
@@ -72,5 +75,54 @@
 	margin-right: 10px;
 }
 
+.add_comment {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-rows: auto;
+
+	grid-template-areas: 
+	"comment_data_field"
+	"add_comment_button";
+
+
+}
+
+.comment_data_field {
+	grid-area: comment_data_field;
+	justify-self: center;
+}
+
+.add_comment_button {
+	grid-area: add_comment_button;
+	justify-self: center;
+} 
  
-           
+.recorder {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:auto auto;
+	grid-template-areas: 
+	"vision"
+	"rec_stop_buttons";
+} 
+
+.vision {
+	grid-area: vision;
+}   
+
+
+.rec_stop_buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	"record_button stop_button";
+	margin-right: 100px;
+}  
+
+.record_button {
+	grid-area: record_button;
+}
+
+.stop_button {
+	grid-area: stop_button;
+}

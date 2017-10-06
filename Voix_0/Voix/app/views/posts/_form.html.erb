@@ -13,14 +13,14 @@
 
 
   <div class="field-1">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    
+    <%= form.text_field :title, id: :post_title, class: 'form-control', placeholder: 'Title' %>
   </div>
 
   
 
   <div class="field-2" >
-    <%= form.label :audio %>
+    
     <%= form.text_field :audio, id: :sound, readonly: true%>
   </div>
   
@@ -31,7 +31,7 @@
 <% end %>
 
 
-<div class="wrapper">
+
 
       <section class="main-controls">
         <canvas class="visualizer" height="60px"></canvas>
@@ -46,7 +46,7 @@
 
       </section>
 
-</div>
+
 
 <script type="text/javascript">
 
@@ -61,7 +61,7 @@
 
 var record = document.querySelector('.record');
 var stop = document.querySelector('.stop');
-var soundClips = document.querySelector('.sound-clips');
+
 var canvas = document.querySelector('.visualizer');
 var mainSection = document.querySelector('.main-controls');
 
@@ -133,7 +133,7 @@ if (navigator.mediaDevices.getUserMedia) {
       clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(deleteButton);
-      soundClips.appendChild(clipContainer);
+     
 
       audio.controls = true;
       var blob = new Blob(chunks, { 'type' : 'audio/mp3; codecs=opus' });
