@@ -16,6 +16,7 @@
 	". submit_button ."
 	". log_button .";
 	background-color: #00cc00;
+	border-radius: 20px;
 }
 
 .sign_up_text {

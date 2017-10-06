@@ -1,50 +1,76 @@
+
+<div class="posts_n_comms">
+  
+
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
 
 
-<%= render 'form', post:@post%>
+<div class="create_post">
+<%= render 'form', post:@post%>  
+</div>
 
 
-<% @posts.each do |post| %>
+      <div class="posts_section">
+        <% @posts.each do |post| %>
 
-    <%= post.title %>
+            <div class="post_title">
+              <%= post.title %>
+            </div>
+            
 
-    <div>
-        <audio controls>
-            <source src="<%= post.audio %>" type="audio/mp3">
-        </audio>
-    </div>
-    <% if post.user_id == current_user.id %>
-    <%= link_to 'Destroy', post, method: :delete %>
-    <% end %>
-    <div class="comments_section">
+            <div class="post_audio">
+                <audio controls>
+                    <source src="<%= post.audio %>" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="post_destroy_link">
+            <% if post.user_id == current_user.id %>
+            <%= link_to 'Destroy', post, method: :delete %>
+            <% end %>
+            </div>
+            <div class="comments_section">
 
-        <p>Here go all the comments</p>
+           
 
         <% post.comments.each do |comment| %>
 
-            <div>
-                
-                <audio controls>
+          <div class="comm">
+            
+          
+                <div class="comment_audio">
+                  <audio controls>
                     <source src="<%= comment.c_audio %>" type="audio/mp3">
-                </audio>
-                <% if comment.user_id == current_user.id %>
-                <%= link_to 'Destroy', post_comment_path(post,comment), method: :delete %>
-                <% end %>
-            </div>
+                  </audio>
+                </div>
+                
+
+                <div class="comment_delete_link">
+                  <% if comment.user_id == current_user.id %>
+                    <%= link_to 'Destroy', post_comment_path(post,comment), method: :delete %>
+                  <% end %>
+                </div>
+
+                <div class="comment_creator">
+                    <% user = User.where(id: comment.user_id)%>
+                    - <%= user[0].username  %>
+                </div>
+              </div>  
+           
         <% end %>
 
-        <p>Add Comment</p>
+        
         <%= form_for([post, Comment.new]) do |f| %>
                 <div class="field_2_<%= post.id %>" >
                     <%= f.label :audio %>
                     <%= f.text_field :c_audio, id: 'sound', readonly: true%>
                 </div>
 
-                <%= f.submit "Add Comment"%>
+        <%= f.submit "Add Comment"%>
         <% end %>
-         <p>Here goes the audio recorder</p>
+         
 
                 <div class="wrapper-<%= post.id %>">
                     <section class="main-controls-<%= post.id %>">
@@ -55,216 +81,217 @@
                         </div>
                     </section>
                 </div>
-<script type="text/javascript">
+                                  <script type="text/javascript">
 
-    function recordFunction() {
-  console.log("Connected");
+                                      function recordFunction() {
+                                    console.log("Connected");
 
-  
-// set up basic variables for app
+                                    
+                                  // set up basic variables for app
 
-var record<%= post.id %> = document.querySelector('.record-<%= post.id %>');
-var stop<%= post.id %> = document.querySelector('.stop-<%= post.id %>');
+                                  var record<%= post.id %> = document.querySelector('.record-<%= post.id %>');
+                                  var stop<%= post.id %> = document.querySelector('.stop-<%= post.id %>');
 
-var canvas<%= post.id %> = document.querySelector('.visualizer-<%= post.id %>');
-var mainSection<%= post.id %> = document.querySelector('.main-controls-<%= post.id %>');
+                                  var canvas<%= post.id %> = document.querySelector('.visualizer-<%= post.id %>');
+                                  var mainSection<%= post.id %> = document.querySelector('.main-controls-<%= post.id %>');
 
-// disable stop button while not recording
+                                  // disable stop button while not recording
 
-stop<%= post.id %>.disabled = true;
+                                  stop<%= post.id %>.disabled = true;
 
-// visualiser setup - create web audio api context and canvas
+                                  // visualiser setup - create web audio api context and canvas
 
-var audioCtx = new (window.AudioContext || webkitAudioContext)();
-var canvasCtx = canvas<%= post.id %>.getContext("2d");
+                                  var audioCtx = new (window.AudioContext || webkitAudioContext)();
+                                  var canvasCtx = canvas<%= post.id %>.getContext("2d");
 
-//main block for doing the audio recording
-
-
- 
-if (navigator.mediaDevices.getUserMedia) {
-    console.log('getUserMedia supported.');
-  var constraints = { audio: true };
-  var chunks = [];
-
-  var onSuccess = function(stream) {
-    var mediaRecorder = new MediaRecorder(stream);
-
-    visualize(stream);
-
-    record<%= post.id %>.onclick = function() {
-      mediaRecorder.start();
-      console.log(mediaRecorder.state);
-      console.log("recorder started");
-      record<%= post.id %>.style.background = "red";
-
-      stop<%= post.id %>.disabled = false;
-      record<%= post.id %>.disabled = true;
-    }
-
-    stop<%= post.id %>.onclick = function() {
-      mediaRecorder.stop();
-      console.log(mediaRecorder.state);
-      console.log("recorder stopped");
-      record<%= post.id %>.style.background = "";
-      record<%= post.id %>.style.color = "";
-      // mediaRecorder.requestData();
-
-      stop<%= post.id %>.disabled = true;
-      record<%= post.id %>.disabled = false;
-    }
-
-    mediaRecorder.onstop = function(e) {
-      console.log("data available after MediaRecorder.stop() called.");
-
-      // var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
-      // console.log(clipName);
-      var clipContainer = document.createElement('article');
-      var clipLabel = document.createElement('p');
-      var audio = document.createElement('audio');
-      var deleteButton = document.createElement('button');
-     
-      clipContainer.classList.add('clip');
-      audio.setAttribute('controls', '');
-      deleteButton.textContent = 'Delete';
-      deleteButton.className = 'delete';
-
-      // if(clipName === null) {
-      //   clipLabel.textContent = 'My unnamed clip';
-      // } else {
-      //   clipLabel.textContent = clipName;
-      // }
-
-      clipContainer.appendChild(audio);
-      clipContainer.appendChild(clipLabel);
-      clipContainer.appendChild(deleteButton);
-      soundClips.appendChild(clipContainer);
-
-      audio.controls = true;
-      var blob = new Blob(chunks, { 'type' : 'audio/mp3; codecs=opus' });
-      console.log("Here is the blob!!!");
-      console.log(blob);
-      chunks = [];
-      var audioURL = window.URL.createObjectURL(blob);
-
-      console.log("Here is the audioURl");
-      console.log(audioURL);
-      audio.src = audioURL;
-      console.log("recorder stopped");
+                                  //main block for doing the audio recording
 
 
-      
-      // blob to base64
-      var reader = new window.FileReader();
-            reader.readAsDataURL(blob); 
-            reader.onloadend = function() {
-                base64data = reader.result;                
-                console.log(base64data);
-                audio.src = base64data;
-                document.getElementsByClassName("field_2_<%= post.id %>")[0].children[1].value = audio.src;
-            }
+                                   
+                                  if (navigator.mediaDevices.getUserMedia) {
+                                      console.log('getUserMedia supported.');
+                                    var constraints = { audio: true };
+                                    var chunks = [];
+
+                                    var onSuccess = function(stream) {
+                                      var mediaRecorder = new MediaRecorder(stream);
+
+                                      visualize(stream);
+
+                                      record<%= post.id %>.onclick = function() {
+                                        mediaRecorder.start();
+                                        console.log(mediaRecorder.state);
+                                        console.log("recorder started");
+                                        record<%= post.id %>.style.background = "red";
+
+                                        stop<%= post.id %>.disabled = false;
+                                        record<%= post.id %>.disabled = true;
+                                      }
+
+                                      stop<%= post.id %>.onclick = function() {
+                                        mediaRecorder.stop();
+                                        console.log(mediaRecorder.state);
+                                        console.log("recorder stopped");
+                                        record<%= post.id %>.style.background = "";
+                                        record<%= post.id %>.style.color = "";
+                                        // mediaRecorder.requestData();
+
+                                        stop<%= post.id %>.disabled = true;
+                                        record<%= post.id %>.disabled = false;
+                                      }
+
+                                      mediaRecorder.onstop = function(e) {
+                                        console.log("data available after MediaRecorder.stop() called.");
+
+                                        // var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
+                                        // console.log(clipName);
+                                        var clipContainer = document.createElement('article');
+                                        var clipLabel = document.createElement('p');
+                                        var audio = document.createElement('audio');
+                                        var deleteButton = document.createElement('button');
+                                       
+                                        clipContainer.classList.add('clip');
+                                        audio.setAttribute('controls', '');
+                                        deleteButton.textContent = 'Delete';
+                                        deleteButton.className = 'delete';
+
+                                        // if(clipName === null) {
+                                        //   clipLabel.textContent = 'My unnamed clip';
+                                        // } else {
+                                        //   clipLabel.textContent = clipName;
+                                        // }
+
+                                        clipContainer.appendChild(audio);
+                                        clipContainer.appendChild(clipLabel);
+                                        clipContainer.appendChild(deleteButton);
+                                        
+
+                                        audio.controls = true;
+                                        var blob = new Blob(chunks, { 'type' : 'audio/mp3; codecs=opus' });
+                                        console.log("Here is the blob!!!");
+                                        console.log(blob);
+                                        chunks = [];
+                                        var audioURL = window.URL.createObjectURL(blob);
+
+                                        console.log("Here is the audioURl");
+                                        console.log(audioURL);
+                                        audio.src = audioURL;
+                                        console.log("recorder stopped");
 
 
-      // console.log("This is the reader");
-      // console.log(reader.result);    
+                                        
+                                        // blob to base64
+                                        var reader = new window.FileReader();
+                                              reader.readAsDataURL(blob); 
+                                              reader.onloadend = function() {
+                                                  base64data = reader.result;                
+                                                  console.log(base64data);
+                                                  audio.src = base64data;
+                                                  document.getElementsByClassName("field_2_<%= post.id %>")[0].children[1].value = audio.src;
+                                              }
 
 
-    
-
-      
-      deleteButton.onclick = function(e) {
-        evtTgt = e.target;
-        evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
-      }
-
-      // clipLabel.onclick = function() {
-      //   var existingName = clipLabel.textContent;
-      //   var newClipName = prompt('Enter a new name for your sound clip?');
-      //   if(newClipName === null) {
-      //     clipLabel.textContent = existingName;
-      //   } else {
-      //     clipLabel.textContent = newClipName;
-      //   }
-      // }
-    }
-
-    mediaRecorder.ondataavailable = function(e) {
-      chunks.push(e.data);
-    }
-  }
-
-  var onError = function(err) {
-    console.log('The following error occured: ' + err);
-  }
-
-  navigator.mediaDevices.getUserMedia(constraints).then(onSuccess, onError);
-
-} else {
-   console.log('getUserMedia not supported on your browser!');
-}
-
-function visualize(stream) {
-  var source = audioCtx.createMediaStreamSource(stream);
-
-  var analyser = audioCtx.createAnalyser();
-  analyser.fftSize = 2048;
-  var bufferLength = analyser.frequencyBinCount;
-  var dataArray = new Uint8Array(bufferLength);
-
-  source.connect(analyser);
-  //analyser.connect(audioCtx.destination);
-
-  draw()
-
-  function draw() {
-    WIDTH = canvas<%= post.id %>.width
-    HEIGHT = canvas<%= post.id %>.height;
-
-    requestAnimationFrame(draw);
-
-    analyser.getByteTimeDomainData(dataArray);
-
-    canvasCtx.fillStyle = 'rgb(200, 200, 200)';
-    canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-
-    canvasCtx.lineWidth = 2;
-    canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
-
-    canvasCtx.beginPath();
-
-    var sliceWidth = WIDTH * 1.0 / bufferLength;
-    var x = 0;
+                                        // console.log("This is the reader");
+                                        // console.log(reader.result);    
 
 
-    for(var i = 0; i < bufferLength; i++) {
- 
-      var v = dataArray[i] / 128.0;
-      var y = v * HEIGHT/2;
+                                      
 
-      if(i === 0) {
-        canvasCtx.moveTo(x, y);
-      } else {
-        canvasCtx.lineTo(x, y);
-      }
+                                        
+                                        deleteButton.onclick = function(e) {
+                                          evtTgt = e.target;
+                                          evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+                                        }
 
-      x += sliceWidth;
-    }
+                                        // clipLabel.onclick = function() {
+                                        //   var existingName = clipLabel.textContent;
+                                        //   var newClipName = prompt('Enter a new name for your sound clip?');
+                                        //   if(newClipName === null) {
+                                        //     clipLabel.textContent = existingName;
+                                        //   } else {
+                                        //     clipLabel.textContent = newClipName;
+                                        //   }
+                                        // }
+                                      }
 
-    canvasCtx.lineTo(canvas<%= post.id %>.width, canvas<%= post.id %>.height/2);
-    canvasCtx.stroke();
+                                      mediaRecorder.ondataavailable = function(e) {
+                                        chunks.push(e.data);
+                                      }
+                                    }
 
-  }
-}
+                                    var onError = function(err) {
+                                      console.log('The following error occured: ' + err);
+                                    }
 
-window.onresize = function() {
-  canvas<%= post.id %>.width = mainSection<%= post.id %>.offsetWidth;
-}
+                                    navigator.mediaDevices.getUserMedia(constraints).then(onSuccess, onError);
 
-window.onresize();
+                                  } else {
+                                     console.log('getUserMedia not supported on your browser!');
+                                  }
 
-}
-</script>
+                                  function visualize(stream) {
+                                    var source = audioCtx.createMediaStreamSource(stream);
+
+                                    var analyser = audioCtx.createAnalyser();
+                                    analyser.fftSize = 2048;
+                                    var bufferLength = analyser.frequencyBinCount;
+                                    var dataArray = new Uint8Array(bufferLength);
+
+                                    source.connect(analyser);
+                                    //analyser.connect(audioCtx.destination);
+
+                                    draw()
+
+                                    function draw() {
+                                      WIDTH = canvas<%= post.id %>.width
+                                      HEIGHT = canvas<%= post.id %>.height;
+
+                                      requestAnimationFrame(draw);
+
+                                      analyser.getByteTimeDomainData(dataArray);
+
+                                      canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+                                      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
+
+                                      canvasCtx.lineWidth = 2;
+                                      canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+
+                                      canvasCtx.beginPath();
+
+                                      var sliceWidth = WIDTH * 1.0 / bufferLength;
+                                      var x = 0;
+
+
+                                      for(var i = 0; i < bufferLength; i++) {
+                                   
+                                        var v = dataArray[i] / 128.0;
+                                        var y = v * HEIGHT/2;
+
+                                        if(i === 0) {
+                                          canvasCtx.moveTo(x, y);
+                                        } else {
+                                          canvasCtx.lineTo(x, y);
+                                        }
+
+                                        x += sliceWidth;
+                                      }
+
+                                      canvasCtx.lineTo(canvas<%= post.id %>.width, canvas<%= post.id %>.height/2);
+                                      canvasCtx.stroke();
+
+                                    }
+                                  }
+
+                                  window.onresize = function() {
+                                    canvas<%= post.id %>.width = mainSection<%= post.id %>.offsetWidth;
+                                  }
+
+                                  window.onresize();
+
+                                  }
+                                  </script>
+              </div>
+          <br>
+        <% end %>
     </div>
-    <br>
-<% end %>
-
+</div>

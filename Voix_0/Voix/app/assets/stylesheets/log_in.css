@@ -1,0 +1,40 @@
+.log_in_form {
+	display: grid;
+	grid-template-columns: 30px 1fr 30px;
+	grid-template-rows: repeat(5,70px);
+	grid-row-gap:10px; 
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 10%;
+
+	grid-template-areas: 
+	". log_in_text ."
+	". log_email ."
+	". log_password ."
+	". log_submit_button ."
+	". sign_up_link .";
+	background-color: #00cc00;
+	border-radius: 20px;
+}
+
+.log_in_text {
+	grid-area: log_in_text;
+}
+.log_email {
+	grid-area: log_email;
+	min-height: 75%;
+}
+
+.log_password {
+	grid-area: log_password;
+	min-height: 75%;
+}
+.log_submit_button {
+	grid-area: log_submit_button;
+	min-height: 100%;
+}
+
+.sign_up_link {
+	grid-area: sign_up_link;
+	text-align: center;
+}

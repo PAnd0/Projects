@@ -1,0 +1,32 @@
+.menu {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-areas: 
+	"my_git my_link sign_out";
+	
+	border-top: solid white;
+	grid-column-gap:10px;
+}
+
+.menu > * {
+	background-color: #00cc00;
+	width: 100%;
+	text-align: center;
+	justify-self:center;
+	align-self: center;
+}
+
+.my_git{
+	grid-area: my_git;
+	
+}
+
+.my_link{
+	grid-area: my_link;
+	
+}
+
+.sign_out {
+	grid-area: sign_out;
+	
+}
