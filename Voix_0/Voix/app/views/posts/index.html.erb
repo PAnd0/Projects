@@ -15,8 +15,9 @@
             <source src="<%= post.audio %>" type="audio/mp3">
         </audio>
     </div>
+    <% if post.user_id == current_user.id %>
     <%= link_to 'Destroy', post, method: :delete %>
-
+    <% end %>
     <div class="comments_section">
 
         <p>Here go all the comments</p>
@@ -28,6 +29,9 @@
                 <audio controls>
                     <source src="<%= comment.c_audio %>" type="audio/mp3">
                 </audio>
+                <% if comment.user_id == current_user.id %>
+                <%= link_to 'Destroy', post_comment_path(post,comment), method: :delete %>
+                <% end %>
             </div>
         <% end %>
 
