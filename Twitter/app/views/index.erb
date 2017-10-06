@@ -1,0 +1,51 @@
+<% @user.followees.each do |user| %>
+<div class="panel panel-default">
+
+	<!-- Default panel contents -->
+	<div class="panel-heading">Posted by: <%=user.user_name%></div>
+	<% user.tweets.each do |tweet| %>
+	<div class="panel-body">
+		<p><%= tweet.message %></p>
+		<table class="table table-condensed">
+			<tr class="active">
+				<td class="active">
+					<div class="row">
+						<div class="col-md-1 fav"><%= tweet.favorites.all.count %></div>
+						<div class="col-md-1 retweet"><%= tweet.retweets.all.count %></div>
+						<div class="col-md-1 reply"><%= tweet.replies.all.count %></div>
+					</div>
+				</td>
+			</tr>
+			<tr class="active some">
+				<td class="active">
+					<div class="row">
+						<div class="col-md-1">
+							<form class="fav" action="/vote/add/fav/<%=tweet.id%>/<%=@user.id%>" method="post">
+								<button class="btn btn-default" type="submit">Fav</button>
+							</form>
+						</div>
+
+						<div class="col-md-1">
+						<form class='retweet' action="/vote/add/retweet/<%=tweet.id%>/<%=@user.id%>" method="post">
+								<button class="btn btn-default retweet"  type="submit">Retweet</button>
+							</form>
+						</div>
+
+						<div class="col-md-1">
+							<form class='reply' action="/vote/add/reply/<%=tweet.id%>/<%=@user.id%>" method="post">
+								<button class="btn btn-default reply"  type="submit">Reply</button>	
+							</form>
+						</div>
+
+					</div>
+				</td>
+			</tr>
+		</table>
+
+
+
+
+		<% end %>
+	</div>
+	<% end %>
+  
