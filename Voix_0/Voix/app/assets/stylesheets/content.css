@@ -1,0 +1,138 @@
+.create_n_posts {
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:300px 1fr; 
+	
+	margin-right: 7%;
+	margin-left: 7%;
+	margin-bottom: 0;
+	grid-template-areas: 
+	"create_post"
+	"posts_section";
+}
+
+.create_post {
+	grid-area: create_post;
+}
+
+.posts_section {
+	grid-area: posts_section;
+	
+}
+
+.single_post {
+	display: grid;
+	grid-template-columns:1fr auto; 
+	grid-template-rows:auto auto;
+	grid-template-areas: 
+	"post_title ."
+	"post_audio post_destroy_link";
+}
+.post_title {
+	grid-area: post_title;
+	text-align: center;
+	border-right: solid black;
+	border-left: solid black;
+
+}
+
+.post_audio {
+	grid-area: post_audio;
+}
+
+.post_destroy_link {
+	grid-area: post_destroy_link;
+	align-self: center;
+}
+
+.comm {
+	display: grid;
+	grid-template-columns:1fr auto; 
+	grid-template-rows:auto auto;
+
+	grid-template-areas: 
+	"comment_audio comment_delete_link"
+	"comment_creator .";
+
+	width: 75%;
+	margin-left: 15%;
+	margin-right:10%;
+
+}
+.comment_audio {
+	grid-area: comment_audio;
+}
+
+.comment_delete_link {
+	grid-area: comment_delete_link;
+	align-self: center;
+}
+
+.comment_creator {
+	grid-area: comment_creator;
+	justify-self: end;
+	margin-right: 10px;
+}
+
+.add_comment {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-rows: auto;
+
+	grid-template-areas: 
+	"comment_data_field"
+	"add_comment_button";
+
+
+}
+
+.comment_data_field {
+	grid-area: comment_data_field;
+	justify-self: center;
+}
+
+.add_comment_button {
+	grid-area: add_comment_button;
+	justify-self: center;
+} 
+ 
+.recorder {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:auto auto;
+	grid-template-areas: 
+	"vision"
+	"rec_stop_buttons";
+} 
+
+.vision {
+	grid-area: vision;
+}   
+
+
+.rec_stop_buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+	"record_button stop_button";
+	margin-right: 100px;
+}  
+
+.record_button {
+	grid-area: record_button;
+}
+
+.stop_button {
+	grid-area: stop_button;
+}
+
+.footer {
+  background-color: #1e1e2f;
+  color: white;
+  text-align: center;
+}
+
+.footer > p {
+  font-size: 17px;
+}

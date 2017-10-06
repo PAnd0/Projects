@@ -10,28 +10,18 @@
       </ul>
     </div>
   <% end %>
-<%
-=begin %>
-  <div class="field">
-    <%= form.label :audio %>
-    <%= form.file_field :audio%>
+
+
+  <div class="field-1">
+    
+    <%= form.text_field :title, id: :post_title, class: 'form-control', placeholder: 'Title' %>
   </div>
 
-<%
-=end %>
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
-  </div>
+  
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :post_body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :audio %>
-    <%= form.text_field :audio, id: :sound%>
+  <div class="field-2" >
+    
+    <%= form.text_field :audio, id: :sound, readonly: true%>
   </div>
   
 
@@ -41,12 +31,12 @@
 <% end %>
 
 
-<div class="wrapper">
+
 
       <section class="main-controls">
         <canvas class="visualizer" height="60px"></canvas>
         <div id="buttons">
-          <button class="record">Record</button>
+          <button class="record" onclick="PostRecord()">Record</button>
           <button class="stop">Stop</button>
         </div>
       </section>
@@ -56,9 +46,14 @@
 
       </section>
 
-</div>
+
 
 <script type="text/javascript">
+
+  function PostRecord() {
+
+
+
   console.log("Connected");
 
 
@@ -66,7 +61,7 @@
 
 var record = document.querySelector('.record');
 var stop = document.querySelector('.stop');
-var soundClips = document.querySelector('.sound-clips');
+
 var canvas = document.querySelector('.visualizer');
 var mainSection = document.querySelector('.main-controls');
 
@@ -117,8 +112,8 @@ if (navigator.mediaDevices.getUserMedia) {
     mediaRecorder.onstop = function(e) {
       console.log("data available after MediaRecorder.stop() called.");
 
-      var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
-      console.log(clipName);
+      // var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
+      // console.log(clipName);
       var clipContainer = document.createElement('article');
       var clipLabel = document.createElement('p');
       var audio = document.createElement('audio');
@@ -129,16 +124,16 @@ if (navigator.mediaDevices.getUserMedia) {
       deleteButton.textContent = 'Delete';
       deleteButton.className = 'delete';
 
-      if(clipName === null) {
-        clipLabel.textContent = 'My unnamed clip';
-      } else {
-        clipLabel.textContent = clipName;
-      }
+      // if(clipName === null) {
+      //   clipLabel.textContent = 'My unnamed clip';
+      // } else {
+      //   clipLabel.textContent = clipName;
+      // }
 
       clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
       clipContainer.appendChild(deleteButton);
-      soundClips.appendChild(clipContainer);
+     
 
       audio.controls = true;
       var blob = new Blob(chunks, { 'type' : 'audio/mp3; codecs=opus' });
@@ -177,15 +172,15 @@ if (navigator.mediaDevices.getUserMedia) {
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
       }
 
-      clipLabel.onclick = function() {
-        var existingName = clipLabel.textContent;
-        var newClipName = prompt('Enter a new name for your sound clip?');
-        if(newClipName === null) {
-          clipLabel.textContent = existingName;
-        } else {
-          clipLabel.textContent = newClipName;
-        }
-      }
+      // clipLabel.onclick = function() {
+      //   var existingName = clipLabel.textContent;
+      //   var newClipName = prompt('Enter a new name for your sound clip?');
+      //   if(newClipName === null) {
+      //     clipLabel.textContent = existingName;
+      //   } else {
+      //     clipLabel.textContent = newClipName;
+      //   }
+      // }
     }
 
     mediaRecorder.ondataavailable = function(e) {
@@ -262,6 +257,6 @@ window.onresize = function() {
 
 window.onresize();
 
-
+}
 </script>
 

@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Voix</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    
+   
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
   </head>
 
   <body>
+    <div class="header">
+      <div class="VOIX">VOIX</div>
+      <% if user_signed_in? %>
+        <div class="top_name">Share your voice, <%= current_user.username %> </div>
+      <% end %>
+    </div>
+    
+    <div class="menu">
+      <div class="my_git">Github: RCAVelez</div>
+      <div class="my_link">LinkedIn: RCAVelez</div>
+      <% if user_signed_in? %>
+      <div class="sign_out"><%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></div>
+      <% end %>
+    </div>
+  	
     <%= yield %>
   </body>
 </html>

@@ -1,20 +1,22 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:comments)
+    @post = Post.new
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+
   end
 
   # GET /posts/new
   def new
-    @post = Post.new
   end
 
   # GET /posts/1/edit
@@ -26,17 +28,17 @@ class PostsController < ApplicationController
   def create
    
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+  
+    ##maybe need to add something here to handle the comments
    
-   
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        redirect_to posts_path
       else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        
+       ##Flash notice something
       end
-    end
+    
   end
 
   # PATCH/PUT /posts/1
@@ -71,6 +73,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :audio)
+      params.require(:post).permit(:title, :audio)
     end
 end

@@ -1,0 +1,31 @@
+.header {
+	display: grid;
+	grid-template-rows: 60px;
+	grid-template-columns: repeat(3,1fr);
+	grid-column-gap:10px;
+	grid-template-areas: 
+	"VOIX . top_name";
+	background-color: #00cc00;
+}
+
+.VOIX {
+	grid-area: VOIX;
+	text-align: center;
+	justify-self:start;
+	align-self: center;
+	font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+ 	color:  #cccccc;
+ 	line-height: 90%;
+ 	margin: .2em 0 .4em 0;
+ 	letter-spacing: 1px;
+	padding-left: 50px;
+
+}
+
+.top_name {
+	grid-area: top_name;
+	text-align: center;
+	justify-self:center;
+	align-self: center;
+}
+
