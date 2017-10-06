@@ -1,0 +1,39 @@
+<!-- <div>
+	<p>Hello World</p>
+
+	<% @users.each do |user| %>
+	<p>User----<%=user.user_name%></p>
+	<% user.tweets.each do |tweet| %>
+	<ol>
+		<p>Tweet: <%=tweet.message %></p> 
+		<p>Fav count</p>
+		<ul>
+
+			<li><%= tweet.favorites.all.count %></li>
+			
+		</ul>
+		<p>Retweeted count</p>
+		<ul>
+			<li><%=tweet.retweets.all.count%></li>
+		</ul>
+
+		<p>Replies count</p>
+		<ul>
+			<li><%=tweet.replies.all.count%></li>
+		</ul>
+	</ol>
+	<% end %>
+	<p><span>----Followers----</span></p>
+	<ul>
+	<% user.followees.each do |user| %>
+		<li><%= user.user_name %></li>
+		<% end %>
+	</ul>
+	<p><span>----Following----</span></p>
+	<ul>
+	<% user.followers.each do |user| %>
+		<li><%= user.user_name %></li>
+		<% end %>
+	</ul>
+	<% end %>
+</div> -->
