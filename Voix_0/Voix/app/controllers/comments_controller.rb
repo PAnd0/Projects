@@ -6,11 +6,12 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    binding.pry
+
     ## Might need to add something here to handle when the commment is added to post
     @comment = Comment.new(comment_params)
-
-    respond_to do |format|
+    @comment.user_id = current_user.id
+    @comment.post_id = params[:post_id]
+  
       if @comment.save
         flash[:notice] = 'Comment was successfully created.'
         redirect_to posts_path
@@ -19,7 +20,7 @@ class CommentsController < ApplicationController
         flash[:notice] = "Error creating comment: #{@comment.errors}"
         redirect_to posts_path
       end
-    end
+  
   end
 
   # DELETE /comments/1
