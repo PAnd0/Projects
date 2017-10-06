@@ -113,8 +113,8 @@ if (navigator.mediaDevices.getUserMedia) {
     mediaRecorder.onstop = function(e) {
       console.log("data available after MediaRecorder.stop() called.");
 
-      var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
-      console.log(clipName);
+      // var clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
+      // console.log(clipName);
       var clipContainer = document.createElement('article');
       var clipLabel = document.createElement('p');
       var audio = document.createElement('audio');
@@ -125,11 +125,11 @@ if (navigator.mediaDevices.getUserMedia) {
       deleteButton.textContent = 'Delete';
       deleteButton.className = 'delete';
 
-      if(clipName === null) {
-        clipLabel.textContent = 'My unnamed clip';
-      } else {
-        clipLabel.textContent = clipName;
-      }
+      // if(clipName === null) {
+      //   clipLabel.textContent = 'My unnamed clip';
+      // } else {
+      //   clipLabel.textContent = clipName;
+      // }
 
       clipContainer.appendChild(audio);
       clipContainer.appendChild(clipLabel);
@@ -173,15 +173,15 @@ if (navigator.mediaDevices.getUserMedia) {
         evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
       }
 
-      clipLabel.onclick = function() {
-        var existingName = clipLabel.textContent;
-        var newClipName = prompt('Enter a new name for your sound clip?');
-        if(newClipName === null) {
-          clipLabel.textContent = existingName;
-        } else {
-          clipLabel.textContent = newClipName;
-        }
-      }
+      // clipLabel.onclick = function() {
+      //   var existingName = clipLabel.textContent;
+      //   var newClipName = prompt('Enter a new name for your sound clip?');
+      //   if(newClipName === null) {
+      //     clipLabel.textContent = existingName;
+      //   } else {
+      //     clipLabel.textContent = newClipName;
+      //   }
+      // }
     }
 
     mediaRecorder.ondataavailable = function(e) {
