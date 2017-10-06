@@ -7,13 +7,12 @@
 
 .our_mission {
   display:grid;
-  grid-template-columns:2fr 1fr;
-  grid-template-rows:repeat(4,1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 250px auto;
   grid-template-areas: 
-      "p_1 ." 
-      "para_1 crazy_goat_lady_pic" 
-      "para_2 ." 
-      "para_3 .";
+      ". crazy_goat_lady_pic ."
+      "para_1 para_2 para_3"; 
+      
   grid-column-gap:10px;
   grid-row-gap:5px;
   justify-items:center;
@@ -22,86 +21,83 @@
   background-size:cover;
   margin-left: 5%;
   margin-right: 5%;
-  background-color: #ffcccc;
-}
-
-
-
-.p_1 {
-  grid-area:p_1;
   
-  align-self: center;
-  border-bottom: solid red;
-  border-left: 10px solid red;
-  padding-left: 40px;
-  padding-bottom: 10px;
-  font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
-  font-weight: normal;
-  font-size: 1.75em;
-  letter-spacing: .2em;
-  line-height: 1.1em;
-  margin:0px;
-  text-align: left  text-transform: uppercase;
 }
+
+
 
 .para_1 {
   grid-area:para_1;
   
   
   align-self: start;
-  border-bottom: solid red;
-  border-left: 10px solid red;
-  padding-left: 40px;
+ 
+  padding:20px;
   padding-bottom: 10px;
   font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
   font-weight: normal;
-  font-size: 1.75em;
+  font-size: 1em;
   letter-spacing: .2em;
   line-height: 1.1em;
   margin:0px;
   text-align: left;
   text-transform: uppercase;
+   word-wrap: break-word;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #99bbff;
+  border-radius: 5px;
 }
 
 .para_2 {
   grid-area:para_2;
   
   align-self: start;
-  border-bottom: solid red;
-  border-left: 10px solid red;
-  padding-left: 40px;
+  
+  padding:20px;
   padding-bottom: 10px;
   font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
   font-weight: normal;
-  font-size: 1.75em;
+  font-size: 1em;
   letter-spacing: .2em;
   line-height: 1.1em;
   margin:0px;
   text-align: left;
   text-transform: uppercase;
+  word-wrap: break-word;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #99bbff;
+  border-radius: 5px;
+  height: 100%;
 }
 
 .para_3 {
   grid-area:para_3;
   
   align-self: start;
-  border-bottom: solid red;
-  border-left: 10px solid red;
-  padding-left: 40px;
+  
+  padding:20px;
   padding-bottom: 10px;
   font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
   font-weight: normal;
-  font-size: 1.75em;
+  font-size: 1em;
   letter-spacing: .2em;
   line-height: 1.1em;
   margin:0px;
   text-align: left;
   text-transform: uppercase;
+   word-wrap: break-word;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: #99bbff;
+  border-radius: 5px;
 }
 
 .crazy_goat_lady_pic {
   grid-area:crazy_goat_lady_pic;
   align-self: start;
+  height: 240px;
 }
 
 .jumbotron .h1, .jumbotron h1 {
