@@ -1,0 +1,48 @@
+.intro_section {
+	display: grid;
+	grid-template-rows: 10% 1fr;
+	grid-template-areas:
+	"name"
+	"description"; 
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-top: 15%;
+	padding-bottom: 15%;
+	text-align: center;
+
+	align-self: center;
+	border:solid green;
+}
+.name {
+	grid-area: name;
+}
+
+.description {
+	grid-area: description;
+}
+
+.skills_section {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-areas: 
+	"one two three four";
+}
+
+.skills_section > * {
+	text-align: center;
+	background-color: green;
+	color:white;
+	border-radius: 10px;
+}
+.one {
+	grid-area: one;
+}
+.two {
+	grid-area: two;
+}
+.three {
+	grid-area: three;
+}
+.four {
+	grid-area: four;
+}
