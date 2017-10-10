@@ -1,0 +1,229 @@
+body, html {
+    height: 100%;
+    background-image: url("beach.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.bg {
+
+}
+.intro_section {
+	display: grid;
+	grid-template-rows: 10% 1fr;
+	grid-template-areas:
+	"name"
+	"description"; 
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-top: 15%;
+	padding-bottom: 15%;
+	text-align: center;
+
+	align-self: center;
+	
+}
+
+.intro_section > * {
+	color:#A0522D; font-family: 'Helvetica Neue', sans-serif; font-size: 21px; font-weight: bold; letter-spacing: 1px; line-height: 1;
+}
+.name {
+	grid-area: name;
+}
+
+.description {
+	grid-area: description;
+}
+
+.work_exp_section {
+
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto;
+	grid-column-gap: 10px;
+	grid-template-areas: 
+	"dbc ameri";
+	margin-top: 30px;
+}
+
+.work_exp_section > * {
+	background-color:RGB(104, 222, 71,0.6);
+	border-radius: 10px;
+	padding:35px;
+
+}
+
+.dbc {
+	grid-area: dbc;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto;
+	grid-row-gap: 10px;
+
+	grid-template-areas: 
+	"title_1"
+	"what_it_is_1"
+	"what_i_did_1";
+}
+
+.title_1 {
+	grid-area: title_1;
+	text-align: center;
+	border-bottom:solid black;
+}
+.what_it_is_1{
+	grid-area: what_it_is_1;
+}
+
+.what_i_did_1{
+	grid-area: what_i_did_1;
+}
+
+.ameri {
+	grid-area: ameri;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto;
+	grid-row-gap: 10px;
+
+	grid-template-areas: 
+	"title_2"
+	"what_it_is_2"
+	"what_i_did_2";
+}
+
+.title_2 {
+	grid-area: title_2;
+	text-align: center;
+	border-bottom:solid black;
+}
+.what_it_is_2{
+	grid-area: what_it_is_2;
+}
+
+.what_i_did_2{
+	grid-area: what_i_did_2;
+}
+
+.personal_projects_section {
+	margin-top:30px;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto auto auto;
+	grid-row-gap: 25px;
+	grid-template-areas: 
+	"project_1"
+	"project_2"
+	"project_3";
+}
+
+.personal_projects_section > * {
+	border-radius: 10px;
+	background-color: RGB(164, 255, 244,0.6);
+	padding:35px;
+}
+
+.project_1 {
+	grid-area: project_1;
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto auto auto;
+	grid-template-areas: 
+	"name_1 name_1 name_1"
+	"description_1 description_1 description_1"
+	"github_1 github_1 github_1";
+
+	grid-row-gap: 25px;
+}
+
+.name_1 {
+	grid-area: name_1;
+	justify-self:center;
+	font-size: 25px;
+}
+
+.description_1{
+	grid-area: description_1;
+}
+
+.github_1{
+	grid-area: github_1;
+	justify-self:center;
+}
+
+.project_2 {
+	grid-area: project_2;
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto auto auto;
+	grid-template-areas: 
+	"name_2 name_2 name_2"
+	"description_2 description_2 description_2"
+	"github_2 github_2 github_2";
+
+	grid-row-gap: 25px;
+}
+
+.name_2 {
+	grid-area: name_2;
+	justify-self:center;
+	font-size: 25px;
+}
+
+.description_2{
+	grid-area: description_2;
+}
+
+.github_2{
+	grid-area: github_2;
+	justify-self:center;
+}
+
+.project_3 {
+	grid-area: project_3;
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto auto auto;
+	grid-template-areas: 
+	"name_3 name_3 name_3"
+	"description_3 description_3 description_3"
+	"github_3 github_3 github_3";
+
+	grid-row-gap: 25px;
+}
+
+.name_3 {
+	grid-area: name_3;
+	justify-self:center;
+	font-size: 25px;
+}
+
+.description_3{
+	grid-area: description_3;
+}
+
+.github_3{
+	grid-area: github_3;
+	justify-self:center;
+}
+
+.we {
+	text-align: center;
+	font-size: 20px;
+	border-bottom:solid black;
+	margin-top: 20px;
+}
+
+.pp{
+	margin-top: 20px; 
+	text-align: center;
+	font-size: 20px;
+	border-bottom:solid black;
+ }
+
