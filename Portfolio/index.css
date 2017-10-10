@@ -11,12 +11,10 @@ body, html {
     background-size: cover;
     background-attachment: fixed;
 }
-.bg {
 
-}
 .intro_section {
 	display: grid;
-	grid-template-rows: 10% 1fr;
+	grid-template-rows: 10%;
 	grid-template-areas:
 	"name"
 	"description"; 
@@ -26,12 +24,12 @@ body, html {
 	padding-bottom: 15%;
 	text-align: center;
 
-	align-self: center;
+	
 	
 }
 
 .intro_section > * {
-	color:#A0522D; font-family: 'Helvetica Neue', sans-serif; font-size: 21px; font-weight: bold; letter-spacing: 1px; line-height: 1;
+	color:#966F33; font-family: 'Helvetica Neue', sans-serif; font-size: 21px; font-weight: bold; letter-spacing: 1px; line-height: 1;
 }
 .name {
 	grid-area: name;
