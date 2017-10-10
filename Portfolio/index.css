@@ -226,4 +226,14 @@ body, html {
 	font-size: 20px;
 	border-bottom:solid black;
  }
+.footer {
+  background-color: #5d8000;
+  color: white;
+  text-align: center;
+  opacity: 0.6;
+  border-radius: 10px;
+}
 
+.footer > p {
+  font-size: 17px;
+}
