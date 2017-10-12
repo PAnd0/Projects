@@ -1,3 +1,4 @@
+
 body, html {
     height: 100%;
     background-image: url("beach.jpg");
@@ -15,6 +16,7 @@ body, html {
 .intro_section {
 	display: grid;
 	grid-template-rows: 10%;
+
 	grid-template-areas:
 	"name"
 	"description"; 
@@ -24,12 +26,14 @@ body, html {
 	padding-bottom: 15%;
 	text-align: center;
 
+
 	
 	
 }
 
 .intro_section > * {
 	color:#966F33; font-family: 'Helvetica Neue', sans-serif; font-size: 21px; font-weight: bold; letter-spacing: 1px; line-height: 1;
+
 }
 .name {
 	grid-area: name;
@@ -38,6 +42,7 @@ body, html {
 .description {
 	grid-area: description;
 }
+
 
 .work_exp_section {
 
@@ -235,3 +240,30 @@ body, html {
 .footer > p {
   font-size: 17px;
 }
+
+.skills_section {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-template-areas: 
+	"one two three four";
+}
+
+.skills_section > * {
+	text-align: center;
+	background-color: green;
+	color:white;
+	border-radius: 10px;
+}
+.one {
+	grid-area: one;
+}
+.two {
+	grid-area: two;
+}
+.three {
+	grid-area: three;
+}
+.four {
+	grid-area: four;
+}
+
