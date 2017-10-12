@@ -1,0 +1,43 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+.show_stuff {
+	display: grid;
+	grid-template-rows: 1fr,1fr ;
+	grid-template-columns:1fr, 49% ; 
+	grid-template-areas: 
+	"content_area content_area"
+	"return_button fun";
+}
+
+.content_area {
+	grid-area: content_area;
+	min-height: 400px;
+	min-width: 400px;
+}
+
+.return_button {
+	grid-area: return_button;
+	min-height: 150px;
+	min-width: 200px;
+}
+
+.fun {
+	grid-area: fun;
+	min-height: 150px;
+	min-width: 200px;
+}
