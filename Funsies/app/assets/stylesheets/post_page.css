@@ -4,10 +4,10 @@
 	grid-template-rows:25% 100px 30px 50px;
 	grid-template-areas: 
 	". . . ."
-	"browse_button browse_button browse_button browse_button"
+	". browse_button browse_button ."
 	"website_input website_input website_input website_input"
 	"back_button back_button ike_button ike_button";
-	border:solid blue;
+	
 	grid-row-gap: 10px;
     top:0;
     bottom:0;
@@ -39,7 +39,11 @@
 	grid-area: ike_button;
 	width: 100%;
 	font-size: 20px;
-
+	border-bottom-right-radius: 30px;
+	background: #DCE35B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border:none; 
 }
 
 .back_button {
@@ -50,8 +54,12 @@
   	background-color: #EEEEEE;
   	color: #333333;
  	text-align: center;
-  	justify-self:center;
+  	
   	padding-top: 25%;
+  	border-bottom-left-radius: 30px;
+  	background: #DCE35B;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
