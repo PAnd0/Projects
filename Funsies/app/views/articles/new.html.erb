@@ -1,9 +1,9 @@
 
 <%= form_for @article, url: articles_path, html: { multipart: true } do |f| %>
 
-	<div id="post_container">
+	<div id="post_container" class="ps-top-to-bottom">
 		<%= f.file_field :data, class: "browse_button" %>
-		<%= f.text_field :website, class: "website_input" %>
+		<%= f.text_field :website, class: "website_input", placeholder: "Paste website url..." %>
 		
   
 		<%= f.submit "Ike!", class: "ike_button" %>
