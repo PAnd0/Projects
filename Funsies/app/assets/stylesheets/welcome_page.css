@@ -1,0 +1,29 @@
+#container {
+	
+	display: grid;
+	grid-template-columns: 10% 1fr 10%;
+	grid-template-rows: 25% 25% 25% 25%;
+	
+	grid-template-areas: 
+	". . ."
+	". post_go ."
+	". fun_go ."
+	". . .";
+	border:solid blue;
+	position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+}
+
+.post_go{
+	grid-area: post_go;
+	border: solid red;
+}
+
+.fun_go {
+	grid-area: fun_go;
+	border: solid red;
+}

@@ -13,16 +13,26 @@
  *= require_tree .
  *= require_self
  */
+@import url(welcome_page.css) ;
+
+html{
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+
+body{
+    height:100%; /* force the BODY element to match the height of the HTML element */
+}
 
 
-.show_stuff {
+/*.show_stuff {
 	display: grid;
 	grid-template-rows: 1fr,1fr ;
 	grid-template-columns:1fr, 49% ; 
 	grid-template-areas: 
 	"content_area content_area"
 	"return_button fun";
-}
+}*/
 
 .content_area {
 	grid-area: content_area;

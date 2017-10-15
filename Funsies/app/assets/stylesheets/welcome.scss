@@ -2,34 +2,5 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#container {
-  position: relative;
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  
-  display:grid;
-  grid-template-columns: auto ;
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-  "post_go"
-  "fun_go";
-  }
 
-.post_go {
-	grid-area: post_go;
-	background-color: #85144b ;
-	text-align: center;
-}
-
-.fun_go {
-	grid-area: fun_go;
-	background-color: #39CCCC;
-	text-align: center;
-	text-align: center;
-}
-
-.fun_go_text {
-	
-}
 
