@@ -14,6 +14,7 @@
  *= require_self
  */
 @import url(welcome_page.css) ;
+@import url(post_page.css);
 
 html{
     min-height:100%;/* make sure it is at least as tall as the viewport */
@@ -26,32 +27,4 @@ body{
 	background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}
-
-
-/*.show_stuff {
-	display: grid;
-	grid-template-rows: 1fr,1fr ;
-	grid-template-columns:1fr, 49% ; 
-	grid-template-areas: 
-	"content_area content_area"
-	"return_button fun";
-}*/
-
-.content_area {
-	grid-area: content_area;
-	min-height: 400px;
-	min-width: 400px;
-}
-
-.return_button {
-	grid-area: return_button;
-	min-height: 150px;
-	min-width: 200px;
-}
-
-.fun {
-	grid-area: fun;
-	min-height: 150px;
-	min-width: 200px;
 }

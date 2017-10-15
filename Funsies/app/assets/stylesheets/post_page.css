@@ -1,0 +1,49 @@
+#post_container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows:25% 100px 100px 50px;
+	grid-template-areas: 
+	". . . ."
+	"browse_button browse_button browse_button browse_button"
+	"website_input website_input website_input website_input"
+	"back_button back_button ike_button ike_button";
+	border:solid blue;
+	
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+   	width: 60%;
+    margin:auto;
+    margin-top: 15%;
+}
+
+.browse_button {
+	grid-area: browse_button;
+	width: 100%;
+	
+
+}
+
+.website_input {
+	grid-area: website_input;
+	width: 100%;
+	
+
+
+}
+
+.ike_button {
+	grid-area: ike_button;
+	width: 100%;
+
+
+}
+
+.back_button {
+	grid-area: back_button;
+	width: 100%;
+	
+
+}
