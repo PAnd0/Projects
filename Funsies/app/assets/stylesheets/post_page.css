@@ -1,14 +1,14 @@
 #post_container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows:25% 100px 100px 50px;
+	grid-template-rows:25% 100px 30px 50px;
 	grid-template-areas: 
 	". . . ."
 	"browse_button browse_button browse_button browse_button"
 	"website_input website_input website_input website_input"
 	"back_button back_button ike_button ike_button";
 	border:solid blue;
-	
+	grid-row-gap: 10px;
     top:0;
     bottom:0;
     left:0;
@@ -22,7 +22,8 @@
 .browse_button {
 	grid-area: browse_button;
 	width: 100%;
-	
+	align-self: center;
+	justify-self: center;
 
 }
 
@@ -37,7 +38,7 @@
 .ike_button {
 	grid-area: ike_button;
 	width: 100%;
-
+	font-size: 20px;
 
 }
 
@@ -45,5 +46,16 @@
 	grid-area: back_button;
 	width: 100%;
 	
+  	
+  	background-color: #EEEEEE;
+  	color: #333333;
+ 	text-align: center;
+  	justify-self:center;
+  	padding-top: 25%;
 
+}
+
+.back_link {
+	text-decoration: none;
+	font-size: 20px;
 }
