@@ -17,7 +17,7 @@
 
 $(document).ready(function(){
 
-   $("button.fun").on("click",function(){
+   $("button.fun_button").on("click",function(){
    	console.log("reloaded");
    	window.location.reload();
    })
