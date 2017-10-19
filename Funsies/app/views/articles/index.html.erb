@@ -5,6 +5,7 @@
 	
 	<div class="content_area">
 		<%# check for image %>
+
 	<% if @a[0].data.url != "/data/original/missing.png" %>
 		<% info = @a[0].data.url  %>
 		
@@ -34,6 +35,6 @@
 	</div>
 
 	<div class="return_button"><%= link_to("Back", root_path) %> </div>
-	<button class="fun">Fun!</button>
+	<button class="fun_button">Fun!</button>
 </section>
 

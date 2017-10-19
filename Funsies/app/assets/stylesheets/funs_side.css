@@ -1,10 +1,10 @@
 .show_stuff {
 	display: grid;
-	/*grid-template-rows: 1fr,1fr ;
-	grid-template-columns:1fr, 49% ; 
+	grid-template-rows: 1fr,1fr ;
+	grid-template-columns:auto, auto ; 
 	grid-template-areas: 
 	"content_area content_area"
-	"return_button fun";*/
+	"return_button fun_button";
 }
 
 .content_area {
@@ -15,6 +15,6 @@
 	grid-area: return_button;
 }
 
-.fun {
-	grid-area: fun;
+.fun_button {
+	grid-area: fun_button;
 }

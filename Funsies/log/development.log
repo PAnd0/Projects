@@ -5330,3 +5330,346 @@ Processing by ArticlesController#new as HTML
 Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-15 16:03:15 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-15 16:03:36 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb__359544057490164863_70257503332480'
+Started GET "/" for 127.0.0.1 at 2017-10-16 15:36:46 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 520ms (Views: 495.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-16 15:36:56 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 86ms (Views: 61.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-16 15:37:12 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-16 15:37:14 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (36.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (48.4ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 36.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___506516974346188415_70310072019220'
+Started GET "/" for 127.0.0.1 at 2017-10-16 15:37:36 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-19 14:52:18 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 911ms (Views: 887.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-19 14:54:08 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:54:10 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (16.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 17.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159912534240'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:16 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159927793680'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:18 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159917367960'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:20 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159917443660'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:21 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159917917220'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:23 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159918087160'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:25 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159886218820'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:27 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  Rendered articles/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     5: 	
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+     9: 		<% info = @a[0].data.url  %>
+    10: 		
+    11: 
+  
+app/views/articles/index.html.erb:8:in `_app_views_articles_index_html_erb___1941058702442523468_70159898750300'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:55:42 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" IS NULL[0m
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2017-10-19 14:56:57 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-19 14:56:59 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 111ms (Views: 90.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-10-19 14:57:04 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Drsguc+ddZ/0gEkDz6OIyGaksNvZFSerF+/pAfjerzKMUvRDd1UCuf0r+mjT35Crc/X1ORF4Mx2Z8Twuyv5xfQ==", "article"=>{"data"=>#<ActionDispatch::Http::UploadedFile:0x007f9ec3419e48 @tempfile=#<Tempfile:/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/RackMultipart20171019-910-1gddywt.jpg>, @original_filename="Unknown-9.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[data]\"; filename=\"Unknown-9.jpg\"\r\nContent-Type: image/jpeg\r\n">, "website"=>""}, "commit"=>"Ike!"}
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/ee587668669d3bc1bbe4ce8b1aa1334d20171019-910-8vmx51.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/ee587668669d3bc1bbe4ce8b1aa1334d20171019-910-1jmstpl.jpg'
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "data_file_name", "data_content_type", "data_file_size", "data_updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-10-19 19:57:04.893567"], ["updated_at", "2017-10-19 19:57:04.893567"], ["data_file_name", "Unknown-9.jpg"], ["data_content_type", "image/jpeg"], ["data_file_size", 8085], ["data_updated_at", "2017-10-19 19:57:04.846844"], ["website", ""]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/new
+Completed 302 Found in 69ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-19 14:57:04 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-19 14:57:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:57:08 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (16987.4ms)
+Completed 200 OK in 17048ms (Views: 17042.5ms | ActiveRecord: 0.5ms)
+
+
+  Rendered articles/index.html.erb within layouts/application (117040.8ms)
+Completed 500 Internal Server Error in 117051ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `data' for nil:NilClass):
+     6: 	<div class="content_area">
+     7: 		<%# check for image %>
+     8: 		<% binding.pry %>
+     9: 	<% if @a[0].data.url != "/data/original/missing.png" %>
+    10: 		<% info = @a[0].data.url  %>
+    11: 		
+    12: 
+  
+app/views/articles/index.html.erb:9:in `_app_views_articles_index_html_erb___1941058702442523468_70159882482260'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 14:57:57 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (47121.4ms)
+Completed 200 OK in 47154ms (Views: 47148.3ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:01:27 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 102ms (Views: 98.1ms | ActiveRecord: 0.4ms)
+
+
