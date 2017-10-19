@@ -12,24 +12,24 @@
 
 		<% if ["jpeg", "gif", "bmp", "tiff","png","jpg"].any? { |word| info.include?(word) } %>
 
-			<img src= "<%= info %>">
+			<img class="cont" src= "<%= info %>">
 			<%# check for video %>
 		<% elsif ["avi", "flv", "wmv", "muv","mp4"].any? { |word| info.include?(word) }  %>
 
-			<video width="320" height="240" controls>
+			<video class="cont" controls>
 		  		<source src="<%= info %>" >
 			</video>
 			<%# check for audio %>
 		<% elsif ["wav", "aiff", "mp3", "acc","ogg","wma"].any? { |word| info.include?(word) } %>
 
-			<audio controls="">
+			<audio class="cont" controls="">
 				<source src="<%= info %>" >
 			</audio>
 		<% end %>
 	<% else %>
 		<%# nothing else check assume its a website %>
 		
-		<iframe src="<%= @a[0].website %>"></iframe>
+		<iframe class="cont" src="<%= @a[0].website %>"></iframe>
 	<% end %>
 
 	</div>

@@ -5,6 +5,15 @@
 	grid-template-areas: 
 	"content_area content_area"
 	"return_button fun_button";
+
+	top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+   	width: 60%;
+    margin:auto;
+    margin-top: 15%;
 }
 
 .content_area {
@@ -13,8 +22,15 @@
 
 .return_button {
 	grid-area: return_button;
+	min-height: 100px;
 }
 
 .fun_button {
 	grid-area: fun_button;
+	min-height: 100px;
+}
+
+.cont {
+	width: 100%;
+	height:300px;
 }
