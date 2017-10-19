@@ -23,11 +23,36 @@
 .return_button {
 	grid-area: return_button;
 	min-height: 100px;
+
+ background-color: #EEEEEE;
+  	color: #333333;
+ 	text-align: center;
+  	
+  	padding-top: 25%;
+  	border-bottom-left-radius: 30px;
+  	background: #00C9FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.return_link {
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
 }
 
 .fun_button {
 	grid-area: fun_button;
+	color: white;
+
 	min-height: 100px;
+	width: 100%;
+	font-size: 20px;
+	border-bottom-right-radius: 30px;
+	background: #40E0D0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+border:none; 
 }
 
 .cont {

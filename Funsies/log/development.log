@@ -5745,3 +5745,170 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:09:48 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 47.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:10:09 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:10:18 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 69ms (Views: 63.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:10:26 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 57ms (Views: 52.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:10:32 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 45.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:10:41 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:11:20 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:12:46 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/RaymondChristian/Desktop/Projects/Funsies/app/views/articles/index.html.erb:37: syntax error, unexpected ',', expecting ')'
+=( link_to("Back", root_path), class: "return_link" );@outpu
+                              ^):
+  
+app/views/articles/index.html.erb:37: syntax error, unexpected ',', expecting ')'
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:12:58 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 65ms (Views: 60.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:13:51 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 48ms (Views: 42.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:14:39 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 70ms (Views: 64.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:14:49 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 81ms (Views: 73.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:14:56 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 65ms (Views: 59.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:15:04 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 58ms (Views: 52.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:15:18 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 60ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:16:13 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:16:25 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 81ms (Views: 74.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-19 15:16:45 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 31.3ms | ActiveRecord: 0.5ms)
+
+
