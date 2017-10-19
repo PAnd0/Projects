@@ -5,16 +5,34 @@
 	<meta content="utf-8" http-equiv="encoding">
 	<title>Raymond's Portfolio</title>
 
-	 
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="index.css">
 	
 	 
 </head>
-<body>
+<body onload="typeWriter()">
 
 	<section class="intro_section">
-		<h1 class="name">Hi, My name is Raymond</h1>
-		<h3 class="description">A coconut water drinking, hypnotic electronic music listening, ruby on rails and javascript developer with a reverse Pandora's box for a mind.</h3>
+		<h1 id='name' class="name"></h1>
+
+		<script>
+			var i = 0;
+			var txt = 'Hi my name is Raymond!';
+			var speed = 54;
+
+			function typeWriter() {
+			  if (i < txt.length) {
+			    document.getElementById("name").innerHTML += txt.charAt(i);
+			    i++;
+			    setTimeout(typeWriter, speed);
+			  }
+			}
+		</script>
+
+		<h3 class="description">A coconut water drinking, hypnotic electronic music listening, ruby on rails and javascript developer with a reverse Pandora's box for a mind ^D^ <br> <br>
+		<a href="RCAVelez'sResume.pdf" download>
+  							Download my resume!
+						</a></h3>
 	</section>
 		<div class="we">Work Experience</div>
 	<section class="work_exp_section">
@@ -31,25 +49,31 @@
 			<div class="what_i_did_2">Contacted by one of the lead developers to discover and successfully implement a way to surpass the Google Maps JS API 12 marker limit for their social projects locations.</div>
 		</div>
 	</section>
-	<div class="pp">Personal Projects</div>
+	<div class="pp">Projects</div>
 	<section class="personal_projects_section">
 		<div class="project_1">
 			<div class="name_1">Goat Website</div>
 			<div class="description_1">Created a website for a local goat business wanting to expand their reach online. I showcased newly learned skills that improved the design of my websites.The project was created through the use of Bootstrap and Bootstrap Studio, CSS Grid, Ruby on Rails, and debugging through the FireFox Developer Edition Grid layout.</div>
-			<div class="github_1">https://github.com/RCAVelez/Projects/tree/master/GoatWebsite</div>
+			<div class="github_1"><a href="https://github.com/RCAVelez/Projects/tree/master/GoatWebsite">See the code</a></div>
 		</div>
 		<div class="project_2">
 			<div class="name_2">Voix - a voice posting and commeting website</div>
 			<div class="description_2">Created the full database schema design for user authentication, creation of posts and comments.
 Created the front end with Bootstrap and CSS Grid while interpolating post data to create a dynamic like table.
 Used Ruby on Rails, Javascript, Mozilla MediaStream Recording API for recording, and open source visualizer logic to create a way to post and comment with voice only.</div>
-			<div class="github_2">https://github.com/RCAVelez/Projects/tree/master/Voix_0/Voix</div>
+			<div class="github_2"><a href="https://github.com/RCAVelez/Projects/tree/master/Voix_0/Voix">See the code</a></div>
 		</div>
 
 		<div class="project_3">
 			<div class="name_3">Pronto Wash - a logistics management website for laundromats</div>
 			<div class="description_3">Implemented in-browser Javascript QR code scanning and decoding feature to create and enter orders into the database, developed majority of Admin capybara tests. As well as collaborated in the back-end design</div>
-			<div class="github_3">https://github.com/aus-bumblebees-2017/dbc_laundry</div>
+			<div class="github_3"><a href="https://github.com/aus-bumblebees-2017/dbc_laundry">See the code</a></div>
+		</div>
+
+		<div class="project_4">
+			<div class="name_4">Funsies - Discover new and interesting web pages, photos and videos across the Web like StumbleUpon</div>
+			<div class="description_4">Funsies is a project with similar functionality to StumbleUpon. Users can add websites, images, videos, and audios to the database and have it retrieved back to another section of the website aka the "Fun" side.</div>
+			<div class="github_4"><a href="https://github.com/RCAVelez/Projects/tree/master/Funsies">See the code</a></div>
 		</div>
 	</section>
 	<div class="footer">
@@ -57,6 +81,7 @@ Used Ruby on Rails, Javascript, Mozilla MediaStream Recording API for recording,
                         <p>chve38@gmail.com</p>
                         <p>My LinkedIn https://www.linkedin.com/in/rcavelez/</p>
                         <p>Checkout my other projects @ https://github.com/RCAVelez/Projects</p>
+                        
                     </div>
 
 </body>
