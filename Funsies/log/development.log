@@ -5939,3 +5939,170 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-21 22:16:05 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2302ms (Views: 2279.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-21 22:16:24 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 94ms (Views: 55.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-10-21 22:16:42 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cgv8hYTQuHRjL6hB3OWsucGK/fGuBb/QcgVV1EKkZAKaXWF3WN3WakUBnKtFWKR9ArVbl2HcKNIUSODXO9LgBA==", "article"=>{"data"=>#<ActionDispatch::Http::UploadedFile:0x007f97e1175518 @tempfile=#<Tempfile:/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/RackMultipart20171021-1084-1pilg5p.png>, @original_filename="Unknown-2.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"article[data]\"; filename=\"Unknown-2.png\"\r\nContent-Type: image/png\r\n">, "website"=>""}, "commit"=>"Ike!"}
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/18835feee61e21a22c678b5b327f2ce620171021-1084-5vplqu.png'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/18835feee61e21a22c678b5b327f2ce620171021-1084-1b56ro8.png'
+  [1m[35mSQL (9.4ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "data_file_name", "data_content_type", "data_file_size", "data_updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-10-22 03:16:42.263972"], ["updated_at", "2017-10-22 03:16:42.263972"], ["data_file_name", "Unknown-2.png"], ["data_content_type", "image/png"], ["data_file_size", 9216], ["data_updated_at", "2017-10-22 03:16:42.152747"], ["website", ""]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/new
+Completed 302 Found in 133ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-21 22:16:42 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-21 22:16:44 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 57ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-21 22:16:46 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  Rendered articles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 75ms (Views: 40.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-21 22:16:51 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-21 22:16:53 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-10-21 22:17:02 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rrGNWFx3uIKHm0CqMk5WpHkkCEgqsRhzXFkhZ7bPKjY+5xCqgHrWnKG1dECr815guhuuLuVoj3E6FJRkz7muMA==", "article"=>{"data"=>#<ActionDispatch::Http::UploadedFile:0x007f97e37d2a80 @tempfile=#<Tempfile:/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/RackMultipart20171021-1084-mk7eum.jpg>, @original_filename="Unknown-6.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[data]\"; filename=\"Unknown-6.jpg\"\r\nContent-Type: image/jpeg\r\n">, "website"=>""}, "commit"=>"Ike!"}
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/6bebee2822a274cdaa1aa8cbc039ee3320171021-1084-5n36gw.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/6bebee2822a274cdaa1aa8cbc039ee3320171021-1084-1panfbh.jpg'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "data_file_name", "data_content_type", "data_file_size", "data_updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-10-22 03:17:02.164546"], ["updated_at", "2017-10-22 03:17:02.164546"], ["data_file_name", "Unknown-6.jpg"], ["data_content_type", "image/jpeg"], ["data_file_size", 7362], ["data_updated_at", "2017-10-22 03:17:02.145254"], ["website", ""]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/new
+Completed 302 Found in 33ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-21 22:17:02 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-10-21 22:17:08 -0500
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XMykJ80kxfyCgt+IeByT2nWLs4Y/gIFHjHrC+4d250sd8JqwRDt5pR9lYjCmtYgWLYlSlIG54aYMCV1tDxKFYA==", "article"=>{"data"=>#<ActionDispatch::Http::UploadedFile:0x007f97e4ef03e8 @tempfile=#<Tempfile:/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/RackMultipart20171021-1084-1ft3ek3.jpg>, @original_filename="Unknown-11.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"article[data]\"; filename=\"Unknown-11.jpg\"\r\nContent-Type: image/jpeg\r\n">, "website"=>""}, "commit"=>"Ike!"}
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/6cd52f35e040db3acf4a6c755acd58be20171021-1084-ni9p8e.jpg'
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/12/fj69cs212db14vtm_bp49g2m0000gn/T/6cd52f35e040db3acf4a6c755acd58be20171021-1084-1kouedk.jpg'
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("created_at", "updated_at", "data_file_name", "data_content_type", "data_file_size", "data_updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2017-10-22 03:17:08.347549"], ["updated_at", "2017-10-22 03:17:08.347549"], ["data_file_name", "Unknown-11.jpg"], ["data_content_type", "image/jpeg"], ["data_file_size", 7715], ["data_updated_at", "2017-10-22 03:17:08.328805"], ["website", ""]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/new
+Completed 302 Found in 64ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-10-21 22:17:08 -0500
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-21 22:17:09 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-21 22:17:10 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-21 22:17:28 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 2]]
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-21 22:17:34 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-21 22:17:46 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  Rendered articles/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-10-21 22:17:55 -0500
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-21 22:18:05 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
